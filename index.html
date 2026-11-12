@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f5ef">
+<meta name="description" content="50 copy-ready prompts. One precise system for research, building, writing, data and agents. Free, MIT and available offline.">
+<title>Prompt System® — 50 modes. One clear way to think.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f5ef;--paper:#fcfcf8;--ink:#18211c;--muted:#68736a;--line:#d8ded4;--shade:#e8ebe2;--accent:#d3f75a;--accent-ink:#162213;--dark-panel:#19241e;--dark-line:rgba(228,244,222,.16);--code-bg:#1b2520;--code-ink:#e8f1e4;--shadow:0 26px 60px rgba(21,34,23,.07);--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:'DM Mono',ui-monospace,SFMono-Regular,Consolas,monospace}
+html[data-theme="dark"]{--bg:#111814;--paper:#18211b;--ink:#edf0e7;--muted:#a0ada3;--line:#344037;--shade:#253129;--accent:#d3f75a;--accent-ink:#162213;--dark-panel:#26342b;--dark-line:rgba(228,244,222,.15);--code-bg:#101712;--code-ink:#eaf0e3;--shadow:0 26px 65px rgba(0,0,0,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #83b00c;outline-offset:4px}button:disabled{cursor:not-allowed}::selection{background:var(--accent);color:#18211c}.mono{font-family:var(--mono)}.skip{position:absolute;left:15px;top:-100px;background:var(--accent);color:#152116;padding:12px 18px;z-index:200}.skip:focus{top:15px}#scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;background:#9dca26;z-index:200;pointer-events:none}
+.site-header{position:sticky;top:0;z-index:100;height:86px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}.header-inner{height:100%;max-width:1560px;margin:0 auto;padding:0 clamp(20px,4.3vw,74px);display:flex;align-items:center;justify-content:space-between;gap:32px}.identity{display:inline-flex;align-items:center;gap:12px;min-width:0}.brand-symbol{display:grid;place-items:center;background:var(--ink);color:var(--bg);font-size:15px;line-height:1;font-weight:700;letter-spacing:-.06em;height:38px;width:38px;transform:rotate(-8deg);transition:transform .35s cubic-bezier(.2,.8,.2,1)}.identity:hover .brand-symbol{transform:rotate(0) scale(1.06)}.brand-name{font-size:16px;letter-spacing:-.055em;font-weight:700;white-space:nowrap}.brand-edition{font:10px var(--mono);color:var(--muted);margin-left:8px;white-space:nowrap}.header-links{display:flex;gap:28px;margin-left:auto;align-items:center}.header-links a{font-size:12px;font-weight:600;transition:opacity .2s}.header-links a:hover{opacity:.58}.header-actions{display:flex;align-items:center;gap:9px}.icon-btn{height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;border:1px solid var(--line);color:var(--ink);transition:background .25s,border-color .25s,transform .2s}.icon-btn:hover{background:var(--shade);transform:translateY(-1px)}.icon-btn svg{width:17px;height:17px}.nav-key{font:10px var(--mono);color:var(--muted)}.header-cta{height:42px;padding:0 19px;background:var(--ink);color:var(--bg);display:inline-flex;align-items:center;gap:18px;font-size:12px;font-weight:700;transition:transform .2s,background .2s}.header-cta:hover{transform:translateY(-2px);background:#3c533e;color:#fff}.arrow{display:inline-block;transition:transform .25s}.header-cta:hover .arrow,.pill-action:hover .arrow{transform:translate(3px,-2px)}
+.page-shell{max-width:1560px;margin:auto;padding-left:clamp(20px,4.3vw,74px);padding-right:clamp(20px,4.3vw,74px)}.eyebrow{display:flex;align-items:center;gap:12px;font:11px var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}.eyebrow:before{content:'';height:8px;width:8px;border-radius:50%;background:var(--ink)}.hero{padding-top:clamp(48px,7vw,110px);padding-bottom:70px}.hero-layout{display:grid;grid-template-columns:minmax(0,1.07fr) minmax(350px,.93fr);gap:clamp(25px,4vw,70px);align-items:end;min-height:570px}.hero-copy{padding-bottom:30px;position:relative;z-index:2}.hero h1{font-weight:600;font-size:clamp(76px,8.4vw,151px);line-height:.91;letter-spacing:-.102em;margin:38px 0 36px;max-width:900px}.hero h1 .line{display:block;white-space:nowrap}.hero h1 .italic{font-family:var(--serif);font-weight:400;letter-spacing:-.082em;font-style:italic;white-space:nowrap}.hero-description{font-size:clamp(15px,1.24vw,19px);max-width:590px;line-height:1.72;color:var(--muted);margin:0 0 30px}.hero-description strong{color:var(--ink);font-weight:600}.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.pill-action{background:var(--accent);border:1px solid var(--accent);color:var(--accent-ink);padding:17px 22px;min-height:54px;font-size:13px;font-weight:700;display:inline-flex;gap:26px;align-items:center;justify-content:space-between;transition:transform .2s,box-shadow .2s}.pill-action:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(123,154,29,.15)}.subtle-action{font-size:12px;font-weight:700;min-height:54px;padding:16px 18px;background:transparent;border:1px solid var(--line);color:var(--ink);transition:background .2s}.subtle-action:hover{background:var(--shade)}.hero-meta{margin-top:54px;color:var(--muted);font:11px var(--mono);display:flex;gap:24px;align-items:center}.hero-meta:before{content:'';width:31px;height:1px;background:var(--muted)}
+.hero-visual{min-height:570px;background:var(--dark-panel);color:#eff7ed;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:26px;transform-style:preserve-3d;border-radius:1px;--mx:50%;--my:40%}.hero-visual:before{content:'';position:absolute;inset:0;background:radial-gradient(420px 420px at var(--mx) var(--my),rgba(186,222,113,.12),transparent 80%),linear-gradient(90deg,transparent 49.8%,rgba(234,255,217,.05) 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,rgba(234,255,217,.05) 50%,transparent 50.2%);pointer-events:none}.hero-visual:after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(227,239,222,.24) .7px,transparent .7px);background-size:22px 22px;opacity:.23;mask-image:radial-gradient(ellipse at center,#000,transparent 76%);pointer-events:none}.visual-top,.visual-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;z-index:3;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.visual-top .status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;box-shadow:0 0 14px rgba(211,247,90,.7)}.visual-bottom{color:#b8c5b7;border-top:1px solid var(--dark-line);padding-top:17px}.visual-bottom strong{color:var(--accent);font-weight:500}.orbital-scene{position:relative;z-index:2;display:grid;place-items:center;height:400px;transform:perspective(850px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));transition:transform .3s ease-out}.ring-svg{width:min(100%,430px);max-height:405px;overflow:visible}.ring-svg .outer{animation:spin 55s linear infinite;transform-origin:center}.ring-svg .inner-ring{animation:spinback 32s linear infinite;transform-origin:center}.ring-svg .pulse{animation:pulse 4s ease-in-out infinite}.coordinate{font:9px var(--mono);letter-spacing:.08em;color:#99afa0;position:absolute}.coord-left{top:10%;left:3%}.coord-right{bottom:12%;right:4%}.syntax-token{position:absolute;padding:11px 13px;background:#f2f7e8;color:#24312a;border:1px solid rgba(255,255,255,.13);box-shadow:0 12px 40px rgba(0,0,0,.2);font:11px var(--mono);letter-spacing:.05em;white-space:nowrap;animation:float 6s ease-in-out infinite}.token-one{left:0;top:22%;transform:rotate(-4deg)}.token-two{right:0;top:31%;animation-delay:-2s;transform:rotate(4deg)}.token-three{bottom:9%;left:15%;animation-delay:-4s}.syntax-token b{display:inline-block;color:#738573;margin-right:9px;font-weight:400}.centre-mark{position:absolute;display:grid;place-items:center;width:107px;height:107px;border-radius:50%;background:var(--accent);color:#1b291d;font-size:50px;font-weight:700;letter-spacing:-.1em;box-shadow:0 0 0 14px rgba(211,247,90,.06),0 18px 60px rgba(0,0,0,.18);transition:transform .6s cubic-bezier(.18,1,.2,1)}.hero-visual:hover .centre-mark{transform:rotate(22deg) scale(1.05)}
+.hero-strip{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.metric{display:flex;gap:10px;align-items:baseline;padding:27px 12px 27px 0}.metric + .metric{border-left:1px solid var(--line);padding-left:25px}.metric b{font-size:clamp(24px,3.2vw,42px);font-weight:600;letter-spacing:-.07em;line-height:1}.metric span{font:10px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.section-wrap{padding-top:114px;padding-bottom:100px}.section-intro{display:flex;gap:40px;align-items:flex-end;justify-content:space-between;margin-bottom:44px}.section-intro h2,.method-intro h2{font-weight:500;font-size:clamp(53px,6.1vw,100px);letter-spacing:-.085em;line-height:.95;margin:22px 0 0}.section-intro h2 em,.method-intro h2 em{font-family:var(--serif);font-weight:400;letter-spacing:-.045em}.section-intro p{max-width:345px;line-height:1.7;font-size:14px;color:var(--muted);margin:0 0 5px}.toolbar{background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;padding:14px 16px;gap:16px;min-height:74px;margin-bottom:24px}.search-control{display:flex;align-items:center;flex:1;gap:14px;min-width:0}.search-control svg{width:20px;height:20px;flex:0 0 auto;color:var(--muted)}.search-control input{border:0;outline:none!important;width:100%;background:transparent;color:var(--ink);min-width:0;font-size:16px}.search-control input::placeholder{color:var(--muted);opacity:.75}.keycap{font:10px var(--mono);padding:5px 8px;border:1px solid var(--line);color:var(--muted)}.toolbar-actions{display:flex;align-items:center;gap:10px}.tool-btn{border:1px solid var(--line);background:transparent;color:var(--ink);padding:12px 15px;white-space:nowrap;font:11px var(--mono);transition:background .2s,border-color .2s}.tool-btn:hover{background:var(--shade);border-color:var(--muted)}.tool-btn.emph{background:var(--ink);color:var(--bg);border-color:var(--ink)}.tool-btn.emph:hover{background:#334636;color:#fff}.result-summary{margin:0 0 16px;color:var(--muted);font:11px var(--mono);display:flex;justify-content:space-between;gap:12px}.library-grid{display:grid;grid-template-columns:245px minmax(0,1fr);gap:clamp(25px,4.7vw,78px);align-items:start}.category-nav{position:sticky;top:112px;align-self:start}.category-nav h3{font:10px var(--mono);letter-spacing:.12em;color:var(--muted);text-transform:uppercase;font-weight:400;margin:0 0 16px}.category-button{display:flex;align-items:center;justify-content:space-between;text-align:left;gap:10px;width:100%;padding:15px 12px 15px 0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px;transition:color .2s,padding .2s}.category-button:hover{color:var(--ink);padding-left:8px}.category-button.selected{color:var(--ink);font-weight:700}.category-button.selected .category-index{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.category-index{font:10px var(--mono);border:1px solid var(--line);min-width:30px;height:27px;display:grid;place-items:center;color:var(--muted)}.category-label{margin-right:auto}.category-count{font:10px var(--mono);color:var(--muted)}.side-note{border:1px solid var(--line);margin-top:34px;padding:20px;font-size:12px;line-height:1.7;color:var(--muted)}.side-note strong{display:block;color:var(--ink);margin-bottom:5px;font-size:13px}.side-note code{font:11px var(--mono);color:var(--ink)}.side-note .side-rule{display:block;height:1px;background:var(--line);margin:16px 0}
+.collection{margin-bottom:62px;scroll-margin-top:105px}.collection-header{padding:0 0 22px;border-bottom:1px solid var(--ink)}.collection-topline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px;color:var(--muted);font:11px var(--mono)}.collection-title-line{display:flex;align-items:center;gap:12px;justify-content:space-between}.collection-title-line h3{margin:0;font-size:clamp(29px,3.6vw,47px);letter-spacing:-.075em;font-weight:500;line-height:1.15}.file-copy{border:1px solid var(--line);background:transparent;color:var(--ink);font:11px var(--mono);padding:10px 12px;white-space:nowrap;transition:background .2s}.file-copy:hover{background:var(--accent);border-color:var(--accent);color:#162213}.collection-description{max-width:600px;margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:13px}.prompt-card{border-bottom:1px solid var(--line);transition:background .3s}.prompt-card:hover{background:color-mix(in srgb,var(--shade) 43%,transparent)}.prompt-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;gap:12px}.prompt-reveal{display:grid;grid-template-columns:53px minmax(0,1fr) 30px;align-items:center;text-align:left;border:0;background:transparent;color:var(--ink);min-height:104px;width:100%;padding:15px 10px 15px 0;gap:15px}.prompt-number{font:11px var(--mono);color:var(--muted);align-self:start;padding-top:8px}.prompt-title{font-size:clamp(17px,2.05vw,25px);font-weight:500;letter-spacing:-.055em;line-height:1.25;display:block}.prompt-when{display:block;margin-top:7px;font-size:12.5px;color:var(--muted);line-height:1.5;letter-spacing:0;font-weight:400}.prompt-plus{font-size:25px;font-weight:300;color:var(--muted);transition:transform .35s,color .35s;justify-self:center}.prompt-card.is-open .prompt-plus{transform:rotate(45deg);color:var(--ink)}.quick-copy{align-self:center;border:1px solid var(--line);background:transparent;color:var(--ink);font:10px var(--mono);padding:10px 11px;margin-right:2px;white-space:nowrap;transition:background .2s,border-color .2s}.quick-copy:hover{background:var(--accent);border-color:var(--accent);color:#19251b}.prompt-details{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.16,1,.3,1),opacity .25s;opacity:0}.prompt-card.is-open .prompt-details{grid-template-rows:1fr;opacity:1}.details-clip{min-height:0;overflow:hidden}.details-content{padding:0 0 26px 68px}.detail-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:7px 0 14px}.variables{display:flex;flex-wrap:wrap;gap:6px}.variable{font:10px var(--mono);color:var(--muted);border:1px solid var(--line);padding:5px 8px}.variable:not(.none){color:var(--ink);background:var(--shade)}.full-copy{border:0;background:var(--accent);color:var(--accent-ink);font:11px var(--mono);padding:12px 15px;white-space:nowrap}.full-copy:hover{filter:brightness(.94)}.prompt-code{background:var(--code-bg);color:var(--code-ink);border:1px solid color-mix(in srgb,var(--code-ink) 12%,var(--code-bg));padding:clamp(16px,2vw,25px);margin:0;max-height:800px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.85 var(--mono);tab-size:2;scrollbar-width:thin}.prompt-id{font:10px var(--mono);color:var(--muted);display:block;margin-top:10px}mark{background:var(--accent);color:#162213;padding:1px 2px}.empty-state{text-align:center;border:1px dashed var(--line);padding:70px 18px;background:var(--paper)}.empty-state .empty-icon{font-size:52px}.empty-state h3{font-size:30px;letter-spacing:-.06em;font-weight:500;margin:18px 0 8px}.empty-state p{color:var(--muted);margin:0 0 24px;font-size:13px}
+.method{background:var(--dark-panel);color:#eef7eb;padding:108px 0 110px;overflow:hidden;position:relative}.method:before{content:'';height:660px;width:660px;position:absolute;border:1px solid rgba(229,244,221,.09);border-radius:50%;right:-300px;top:-270px;box-shadow:0 0 0 78px rgba(229,244,221,.025),0 0 0 160px rgba(229,244,221,.02)}.method-content{position:relative}.method-intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end}.method .eyebrow{color:#bac9b8}.method .eyebrow:before{background:var(--accent)}.method-intro h2{max-width:770px}.method-intro p{max-width:420px;margin:0 0 5px;color:#b8c7b8;line-height:1.8;font-size:15px}.method-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:65px;background:var(--dark-line);border:1px solid var(--dark-line)}.method-step{background:var(--dark-panel);padding:32px 25px;min-height:237px;transition:background .3s}.method-step:hover{background:#2a3a2f}.step-number{font:11px var(--mono);color:var(--accent);display:block;margin-bottom:50px}.method-step h3{font-size:clamp(24px,2.6vw,38px);letter-spacing:-.07em;font-weight:500;margin:0 0 10px}.method-step p{font-size:12px;color:#b5c3b4;line-height:1.7;margin:0}.method-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:37px;color:#b2c1af;font:11px var(--mono)}.method-bottom .beacon{display:flex;gap:8px;align-items:center}.method-bottom .beacon:before{content:'';height:6px;width:6px;background:var(--accent);border-radius:50%}.method-bottom a{text-decoration:underline;text-underline-offset:4px}.method-bottom a:hover{color:var(--accent)}
+.site-footer{padding:75px 0 32px}.footer-main{display:flex;justify-content:space-between;align-items:end;gap:30px;padding-bottom:66px}.footer-title{font-weight:600;letter-spacing:-.09em;line-height:.9;font-size:clamp(55px,8vw,120px);margin:0}.footer-title em{font-family:var(--serif);font-weight:400}.footer-main p{font:12px/1.85 var(--mono);color:var(--muted);max-width:330px;margin:0}.footer-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font:11px var(--mono);color:var(--muted)}.footer-bottom a:hover{color:var(--ink);text-decoration:underline}.toast{position:fixed;z-index:220;bottom:28px;left:50%;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);border:1px solid var(--line);padding:13px 20px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);font:12px var(--mono);transition:transform .25s,opacity .25s}.toast.show{opacity:1;transform:translate(-50%,0)}.toast .tick{background:var(--accent);height:19px;width:19px;display:grid;place-items:center;color:#18211c;border-radius:50%;font-size:12px}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes spinback{to{transform:rotate(-360deg)}}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}@keyframes enterUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:no-preference){.hero .eyebrow{animation:enterUp .6s both}.hero h1{animation:enterUp .8s .12s both}.hero-description{animation:enterUp .7s .27s both}.hero-actions{animation:enterUp .7s .37s both}.hero-visual{animation:enterUp 1s .24s both}.hero-strip{animation:enterUp .7s .46s both}.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:none}}
+@media(max-width:1150px){.hero h1{font-size:clamp(65px,8vw,112px)}.hero-layout{grid-template-columns:1fr .82fr;gap:23px}.hero-visual{min-height:520px}.header-links{gap:17px}.library-grid{grid-template-columns:210px minmax(0,1fr);gap:30px}.details-content{padding-left:0}}@media(max-width:900px){.hero-layout{grid-template-columns:1fr;min-height:0}.hero-visual{max-height:420px;min-height:395px}.orbital-scene{height:310px}.ring-svg{max-height:315px}.hero h1{font-size:clamp(70px,11.4vw,130px)}.hero-strip{margin-top:35px}.section-intro{align-items:start;flex-direction:column;gap:15px}.library-grid{grid-template-columns:1fr;gap:25px}.category-nav{position:static;display:flex;flex-wrap:wrap;gap:7px}.category-nav h3,.side-note{display:none}.category-button{width:auto;border:1px solid var(--line);padding:9px 12px;min-height:38px;gap:8px}.category-button:hover{padding-left:12px;background:var(--shade)}.category-button.selected{border-color:var(--ink)}.category-index{display:none}.category-count{font-size:9px}.method-intro{grid-template-columns:1fr}.method-steps{grid-template-columns:repeat(2,1fr)}}@media(max-width:670px){.site-header{height:70px}.header-inner{padding:0 18px;gap:8px}.brand-edition,.header-links,.nav-key{display:none}.brand-name{font-size:15px}.brand-symbol{height:34px;width:34px}.header-cta{height:39px;padding:0 12px;gap:9px;font-size:11px}.icon-btn{height:39px;min-width:39px}.hero{padding-top:47px;padding-bottom:40px}.hero h1{font-size:clamp(52px,12.2vw,90px);margin:28px 0}.hero h1 .line{white-space:normal}.hero-description{font-size:14px;line-height:1.72}.hero-meta{margin-top:34px}.hero-visual{min-height:375px;padding:18px}.hero-strip{grid-template-columns:repeat(2,1fr)}.metric{padding:19px 10px 19px 0}.metric + .metric{padding-left:12px}.metric:nth-child(3){border-left:0;border-top:1px solid var(--line)}.metric:nth-child(4){border-top:1px solid var(--line)}.section-wrap{padding-top:73px;padding-bottom:55px}.section-intro{margin-bottom:30px}.section-intro h2,.method-intro h2{font-size:clamp(51px,11vw,74px)}.toolbar{flex-wrap:wrap;padding:14px;margin-bottom:15px}.search-control{flex-basis:100%;min-height:32px}.toolbar-actions{width:100%;justify-content:space-between}.tool-btn{padding:9px 10px;font-size:10px;flex:1}.keycap{display:none}.category-button{font-size:11px}.collection{margin-bottom:48px}.collection-title-line h3{font-size:34px}.collection-topline{font-size:10px}.prompt-reveal{grid-template-columns:32px minmax(0,1fr) 21px;gap:8px;min-height:104px;padding:13px 3px 13px 0}.prompt-title{font-size:20px}.prompt-when{font-size:12px}.quick-copy{font-size:10px;padding:9px 7px}.detail-head{align-items:flex-start;flex-direction:column}.full-copy{align-self:flex-end}.prompt-code{font-size:11px;line-height:1.7}.method{padding:77px 0}.method-steps{margin-top:35px}.method-step{padding:22px 18px;min-height:210px}.method-step h3{font-size:29px}.method-bottom{align-items:start;flex-direction:column}.footer-main{align-items:start;flex-direction:column;gap:30px;padding-bottom:45px}.site-footer{padding-top:55px}}@media(max-width:380px){.header-cta{display:none}.hero h1{font-size:52px}.pill-action,.subtle-action{font-size:11px}.hero-visual{min-height:350px}.centre-mark{width:86px;height:86px;font-size:41px}.syntax-token{font-size:9px;padding:9px}.category-button{padding:8px}.toolbar-actions{flex-wrap:wrap}.toolbar-actions .tool-btn{flex:1 1 44%}.toolbar-actions .tool-btn.emph{flex-basis:100%}.method-steps{grid-template-columns:1fr}.method-step{min-height:0}.step-number{margin-bottom:20px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}.orbital-scene{transform:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#library">Skip to prompt library</a>
+<div id="scroll-progress" aria-hidden="true"></div>
+<header class="site-header">
+ <div class="header-inner">
+  <a class="identity" href="#top" aria-label="Prompt System home"><span class="brand-symbol" aria-hidden="true">P<span style="color:var(--accent)">.</span></span><span class="brand-name">prompt system<span style="font-size:9px;vertical-align:super">®</span></span><span class="brand-edition">/ EDITION 01</span></a>
+  <nav class="header-links" aria-label="Main navigation"><a href="#library">The library</a><a href="#method">The method</a><a href="#about">About</a></nav>
+  <div class="header-actions">
+   <button class="icon-btn" id="nav-search" aria-label="Search prompts" title="Search prompts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="nav-key">/</span></button>
+   <button class="icon-btn" id="theme-toggle" aria-label="Switch to dark theme" title="Toggle dark / light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.3 15.5A8.5 8.5 0 0 1 8.5 3.7 8.6 8.6 0 1 0 20.3 15.5Z"/></svg></button>
+   <a class="header-cta" href="#library">Explore modes <span class="arrow" aria-hidden="true">↗</span></a>
+  </div>
+ </div>
+</header>
+<main id="top">
+ <section class="hero page-shell" aria-labelledby="hero-title">
+  <div class="eyebrow">THE OPEN PROMPT PLAYBOOK <span aria-hidden="true">/</span> v1.0</div>
+  <div class="hero-layout">
+   <div class="hero-copy">
+    <h1 id="hero-title"><span class="line">50 prompts</span><span class="line">that <em class="italic">actually</em></span><span class="line">work<span style="color:#8eb62f">.</span></span></h1>
+    <p class="hero-description"><strong>Ready to paste.</strong> Search, research, build, write, extract, and run agents. Every mode follows the same grammar — <strong>role → procedure → rules → output contract</strong> — so they can be chained and swapped. Free, MIT, no account.</p>
+    <div class="hero-actions"><a class="pill-action" href="#library">Explore the library <span class="arrow" aria-hidden="true">↗</span></a><button class="subtle-action" id="copy-library-hero">Copy all 50 ↗</button></div>
+    <div class="hero-meta"><span>6 files / 50 modes</span><span>No install. No dependencies.</span></div>
+   </div>
+   <div class="hero-visual" id="hero-visual" aria-label="Animated diagram of the four-step prompt grammar" role="img">
+    <div class="visual-top"><span><span class="status-dot"></span> SYSTEM / ACTIVE</span><span>50 / 50</span></div>
+    <div class="orbital-scene">
+     <span class="coordinate coord-left">X: 042 / Y: 108</span><span class="coordinate coord-right">↗ 100% SIGNAL</span>
+     <svg class="ring-svg" viewBox="0 0 440 440" fill="none" aria-hidden="true">
+      <circle cx="220" cy="220" r="184" stroke="rgba(237,255,232,.13)" stroke-width="1"/>
+      <circle class="outer" cx="220" cy="220" r="159" stroke="#b0c79e" stroke-width="1.2" stroke-dasharray="2 12"/>
+      <circle cx="220" cy="220" r="136" stroke="rgba(238,255,232,.14)" stroke-width="1"/>
+      <circle class="inner-ring" cx="220" cy="220" r="116" stroke="#d3f75a" stroke-opacity=".64" stroke-width="1" stroke-dasharray="55 95 8 50"/>
+      <circle cx="220" cy="220" r="93" stroke="rgba(211,247,90,.25)" stroke-width="1"/>
+      <circle class="pulse" cx="220" cy="220" r="76" stroke="rgba(211,247,90,.17)" stroke-width="1"/>
+      <path d="M36 220H403M220 36V403" stroke="rgba(232,246,224,.12)" stroke-width="1"/>
+      <path d="M91 91 349 349M349 91 91 349" stroke="rgba(232,246,224,.07)" stroke-width="1"/>
+      <circle cx="220" cy="36" r="3" fill="#d3f75a"/><circle cx="403" cy="220" r="3" fill="#d3f75a"/><circle cx="220" cy="403" r="3" fill="#d3f75a"/><circle cx="36" cy="220" r="3" fill="#d3f75a"/>
+      <path d="M220 10v16M220 414v16M10 220h16M414 220h16" stroke="#eaf7df" stroke-opacity=".6"/>
+     </svg>
+     <div class="centre-mark" aria-hidden="true">P<span style="font-size:30px;margin-top:28px">.</span></div>
+     <div class="syntax-token token-one"><b>01 /</b> ROLE</div><div class="syntax-token token-two"><b>02 /</b> PROCEDURE</div><div class="syntax-token token-three"><b>03 /</b> RULES → OUTPUT</div>
+    </div>
+    <div class="visual-bottom"><span>ONE GRAMMAR / INFINITE USES</span><strong>● COMPILE YOUR THINKING</strong></div>
+   </div>
+  </div>
+  <div class="hero-strip" aria-label="Library facts"><div class="metric"><b>50</b><span>Copy-ready modes</span></div><div class="metric"><b>06</b><span>Organized files</span></div><div class="metric"><b>00</b><span>Dependencies</span></div><div class="metric"><b>MIT</b><span>Open license</span></div></div>
+ </section>
+ <section class="section-wrap page-shell" id="library" aria-labelledby="library-title">
+  <div class="section-intro reveal"><div><div class="eyebrow">001 — THE LIBRARY</div><h2 id="library-title">A mode for <em>every</em><br>kind of work.</h2></div><p>One carefully structured library. Find a mode, open it, and copy the exact prompt into your workflow. Everything stays yours.</p></div>
+  <div class="toolbar" role="search" aria-label="Search the prompt library"><label class="search-control" for="search-input"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg><input id="search-input" type="search" placeholder="Search 50 prompts, roles or use cases..." autocomplete="off" spellcheck="false" aria-label="Search prompts"><span class="keycap" aria-hidden="true">/</span></label><div class="toolbar-actions"><button class="tool-btn" id="surprise" title="Open a random prompt">↗ Surprise me</button><button class="tool-btn" id="expand-all">+ Expand all</button><button class="tool-btn emph" id="copy-library">↗ Copy library</button></div></div>
+  <div class="result-summary"><span id="result-count" role="status">Showing 50 of 50 prompts</span><span>FILTER / SEARCH / COPY</span></div>
+  <div class="library-grid"><aside class="category-nav" id="categories" aria-label="Filter prompts by category"></aside><div id="prompt-list" aria-live="off"></div></div>
+ </section>
+ <section id="method" class="method" aria-labelledby="method-title"><div class="page-shell method-content"><div class="method-intro"><div class="reveal"><div class="eyebrow">002 — THE METHOD</div><h2 id="method-title">One grammar.<br><em>Infinite ways</em><br>to work.</h2></div><p class="reveal">Every mode follows a consistent structure, so you can move between research, code, writing and operations without relearning how to prompt. Build a chain or use one at a time.</p></div><div class="method-steps reveal"><div class="method-step"><span class="step-number">01 — START</span><h3>Role</h3><p>Define what the model is responsible for before the work begins.</p></div><div class="method-step"><span class="step-number">02 — THINK</span><h3>Procedure</h3><p>Make the reasoning and execution steps explicit and checkable.</p></div><div class="method-step"><span class="step-number">03 — GUARD</span><h3>Rules</h3><p>Set boundaries, requirements and conditions that matter.</p></div><div class="method-step"><span class="step-number">04 — SHIP</span><h3>Output</h3><p>Specify the exact structure the final response must take.</p></div></div><div class="method-bottom"><span class="beacon">ONE LIBRARY · ZERO INSTALLS · WORKS OFFLINE</span><a href="#library">Browse the 50 modes ↗</a></div></div></section>
+</main>
+<footer class="site-footer page-shell" id="about"><div class="footer-main"><h2 class="footer-title">Make it <em>clear.</em></h2><p>Prompt System v1.0<br>50 modes across 6 files.<br>Copy anything. Attribution optional.<br>MIT License.</p></div><div class="footer-bottom"><span>© PROMPT SYSTEM / AN OPEN WORKING LIBRARY</span><span><a href="#method">Read the method</a> &nbsp; · &nbsp; <a href="#library">Back to library ↑</a> &nbsp; · &nbsp; MIT License</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"><span class="tick" aria-hidden="true">✓</span><span id="toast-message">Copied to clipboard</span></div>
+<script>
+const FILES = [
+{
+  f:"Core & Meta", p:"prompts/10_core.md", n:"8",
+  d:"The layer everything else sits on: compile requests, route them, write specs, judge results.",
+  x:[
+  {i:"core.prompt-compiler",t:"Prompt Compiler",w:"A rough, messy request needs to become one production-ready prompt.",p:`ROLE: Prompt compiler. Turn a rough request into one production-ready prompt.
+INPUT: {{rough_request}} | model: {{model}} | audience: {{audience}}
+
+PROCEDURE:
+1. State the real objective in one sentence. If two objectives conflict, keep the higher-value one and say what was dropped.
+2. List hard constraints (format, length, tools, data) and the unknowns.
+3. Choose the minimum input variables, named {{snake_case}}.
+4. Write the prompt in fixed order: ROLE -> MISSION -> INPUTS -> PROCEDURE -> RULES -> OUTPUT -> UNCERTAINTY.
+
+OUTPUT: objective (1 line) | variables table (name, type, example) | PROMPT in a fenced block | 3 failure modes it prevents.
+
+RULES: No undefined adjectives ("good", "engaging"). Every rule must be checkable by reading the output. Under 400 words unless told otherwise.`},
+
+  {i:"core.task-router",t:"Mode Router",w:"Decide how to handle a request before spending tokens on it.",p:`ROLE: Request router. Never answer the request.
+INPUT: {{user_request}} | modes: {{mode_list}}
+
+PROCEDURE:
+1. Classify into exactly one mode: ANSWER · SEARCH · RESEARCH · BUILD · WRITE · EXTRACT · OPERATE · EVALUATE.
+2. Score specificity 0-1 and risk 0-1; list missing information.
+3. Specificity < 0.6 -> CLARIFY with max 3 questions.
+4. Risk >= 0.7 (money, health, legal, production, publishing) -> gate = true.
+
+OUTPUT: JSON only {"mode","why","missing","gate","next_prompt_id"} with why <= 20 words.
+
+RULES: No modes outside the list. If two fit, choose the one whose output the user can act on and name the other in why.`},
+
+  {i:"core.clarifier",t:"Question-First Clarifier",w:"Details are missing, but you don't want to interrogate the user.",p:`ROLE: Question-first assistant.
+MISSION: Reach a buildable or answerable spec with the fewest questions.
+
+RULES: Max 3 questions, only ones whose answers change the output. Attach a default to each so the user can reply "defaults". No preamble, no restating the request, no praise.
+
+OUTPUT:
+Q1..Q3, each with (default: ...)
+If you reply "defaults", I will proceed with: <one line per assumption>
+
+AFTER ANSWERS: continue immediately; ask again only for a hard blocker (destructive action, missing source of truth, legal exposure).`},
+
+  {i:"core.spec-writer",t:"Build Spec Writer",w:"An idea must become a spec someone could build without asking you questions.",p:`ROLE: Spec writer for products, features, and workflows.
+INPUT: {{idea}} | users: {{users}} | constraints: {{constraints}}
+
+OUTPUT:
+1. Problem: two sentences, no solution words.
+2. Users & jobs-to-be-done: max 3.
+3. Scope: must / should / won't (non-goals mandatory).
+4. Core flow: numbered happy path, max 8 steps.
+5. Data: entities, key fields, relationships.
+6. Edge cases: at least 5, each with expected behavior.
+7. Acceptance criteria: Given / When / Then, testable by a stranger.
+8. Open questions: max 5, each with a recommended default.
+
+RULES: No technology choices unless asked. Ban "seamless", "intuitive", "robust", "scalable" as requirements.`},
+
+  {i:"core.human-to-machine",t:"Human → Machine Rewrite",w:"Clear to a person, ambiguous to a model.",p:`ROLE: Instruction normalizer.
+INPUT: {{human_text}}
+
+TASK: Rewrite into an instruction an AI can execute without guessing.
+1. Preserve intent and every constraint.
+2. Make implicit assumptions explicit and list them.
+3. Replace vague quantifiers with numbers ("a few" -> 3, "short" -> 60 words).
+4. Convert desired qualities into observable checks.
+5. Keep the original language.
+
+OUTPUT: REWRITE (fenced) -> ASSUMPTIONS -> CHECKABLE CRITERIA.
+
+RULES: Add no requirements the user did not imply. No softening, no politeness. Shorter where meaning survives.`},
+
+  {i:"core.output-judge",t:"Rubric Judge",w:"You need a verdict on an output, not a revision of it.",p:`ROLE: Strict evaluator. You score work; you do not fix it.
+INPUT: {{task}} | {{output}} | rubric: {{rubric}}
+
+PROCEDURE: Score each criterion 1-5 with a one-line justification quoting the output. Apply gates: any criterion <= 2 fails the whole output.
+
+OUTPUT: table (criterion | score | evidence quote) | GATES pass/fail + first failing item | TOP 3 FIXES ranked by score impact, each an exact edit instruction.
+
+RULES: Quote, never paraphrase. Empty or off-task output scores 1 and stops. No 5 without evidence. No praise.`},
+
+  {i:"core.decision",t:"Decision Analyst",w:"A choice with real consequences and incomplete information.",p:`ROLE: Decision analyst. You reduce regret, not uncertainty.
+INPUT: {{decision}} | options: {{options}} | deadline: {{deadline}} | stakes: {{stakes}}
+
+PROCEDURE:
+1. Reframe as a choice between specific alternatives, including "do nothing" and "delay".
+2. Separate the reversible parts from the irreversible ones.
+3. List what must be true for each option to win.
+4. Identify the cheapest test that resolves the biggest unknown.
+
+OUTPUT: DECISION SHAPE (type, reversibility, deadline pressure) | OPTIONS TABLE (option, upside, downside, cost of being wrong) | KEY UNCERTAINTY + test | RECOMMENDATION | TRIPWIRES (what makes you reverse it, with a date).
+
+RULES: No false precision. If options are not comparable, say so and fix the framing first. Favor reversible moves under high uncertainty.`},
+
+  {i:"core.negotiator",t:"Negotiation Prep",w:"Before a conversation where money, scope, or terms are at stake.",p:`ROLE: Negotiation coach.
+INPUT: {{situation}} | counterpart: {{counterpart}} | goal: {{goal}} | walk-away: {{batna}}
+
+OUTPUT:
+- INTERESTS: yours and theirs, separated from stated positions.
+- BATNA CHECK: is your walk-away real, and better than the deal?
+- LEVERS: 5 things to trade that cost you little and matter to them.
+- OPENING: the first ask, with the reasoning behind the number.
+- CONCESSION LADDER: what you give, in what order, and what you require back.
+- 4 LIKELY PUSHBACKS with a response each, <= 25 words.
+- WALK-AWAY SCRIPT: one paragraph, calm, no threat.
+
+RULES: Never advise deception or pressure tactics. If the counterpart holds all the leverage, say so plainly and shift the plan to protecting the walk-away.`}
+  ]
+},
+{
+  f:"Search & Research", p:"prompts/20_research.md", n:"9",
+  d:"Find, verify, compare, synthesize. Citation discipline is non-negotiable in every mode here.",
+  x:[
+  {i:"search.grounded-answer",t:"Cited Search Answer",w:"A factual question needs an answer with sources, fast.",p:`ROLE: Research answerer with citation discipline.
+MISSION: Answer {{question}} using only evidence you retrieved.
+
+PROCEDURE:
+1. Restate as 1-3 answerable sub-questions.
+2. Search each; prefer primary and current sources; record date and author.
+3. Extract claims with source and a quote of <= 25 words.
+4. Reconcile conflicts: present both and say which is better supported.
+
+OUTPUT: DIRECT ANSWER (<=3 sentences) | EVIDENCE (bullets ending with [n]) | WHAT IS UNCERTAIN | SOURCES (n · title · publisher · date · link).
+
+RULES: No claim without a citation. Never cite a page you did not read. Label fact / estimate / opinion. If evidence is thin, write "insufficient evidence" and name what would settle it.`},
+
+  {i:"search.query-planner",t:"Search Query Planner",w:"One search box isn't enough — you need a fan-out plan first.",p:`ROLE: Search strategist.
+INPUT: {{question}} | freshness: {{freshness}} | geography: {{geo}}
+
+OUTPUT:
+- DECOMPOSITION: 2-4 sub-questions in dependency order.
+- QUERIES: 2-3 per sub-question, mixing exact-phrase, site-restricted, primary-source (filetype:pdf, .gov, .edu, official docs) and one dissent query (criticism, failure, lawsuit).
+- FILTERS: date range, language, domains to prefer and avoid.
+- STOP CONDITION: the evidence that ends the search.
+
+RULES: Max 12 queries. No query over 8 words unless quoted. Name the source type each query should surface.`},
+
+  {i:"research.deep-brief",t:"Deep Research Brief",w:"A decision depends on it: multi-thread investigation with confidence levels.",p:`ROLE: Senior research analyst.
+MISSION: Decision-grade brief on {{topic}} for {{decision_maker}}, who must decide {{decision}}.
+
+PROCEDURE:
+1. Frame: question, scope, time window, and what evidence would change the decision.
+2. Plan 4-7 threads (market, technical, regulatory, competitive, cost, risk).
+3. Per thread, at least 2 independent sources; log date, incentive, confidence.
+4. Synthesize by convergence: where sources agree, where they split, and why.
+5. Quantify, and convert numbers into decision-relevant units.
+
+OUTPUT: BOTTOM LINE (<=5 bullets) | KEY FINDINGS (claim, evidence, confidence H/M/L) | TENSIONS & UNKNOWNS | OPTIONS + trade-offs | RECOMMENDATION + what would falsify it | SOURCE TABLE (title, publisher, date, link, bias note).
+
+RULES: Label inference as "Inference:". Flag any source older than {{staleness_months}} months.`},
+
+  {i:"research.source-audit",t:"Source Credibility Audit",w:"You have sources but don't trust them yet.",p:`ROLE: Source auditor.
+INPUT: {{sources}} | claim under test: {{claim}}
+
+PER SOURCE: publisher · author & credentials · date · primary or secondary · funding/interest · method · what it actually supports (quote <= 25 words) · what it does NOT support · credibility H/M/L with reason.
+
+THEN:
+CONVERGENCE: how many genuinely independent sources support the claim.
+CONTRADICTIONS: who disagrees and their incentive.
+VERDICT: supported / partly / unsupported / undetermined.
+
+RULES: Independence is not count — flag sources that copy each other. Press releases, vendor blogs, and listicles are secondary at best. If you cannot inspect a source, say so instead of guessing.`},
+
+  {i:"research.landscape",t:"Landscape / Competitive Scan",w:"You need the map of a market or field, not one answer.",p:`ROLE: Competitive and market analyst.
+INPUT: {{market}} | {{geo}} | {{time_window}}
+
+OUTPUT:
+- SEGMENTS: 3-6, who plays in each, each player's one-line thesis.
+- TABLE: player | what they sell | who pays | pricing signal | wedge | cited weakness.
+- MONEY MOVES: funding, M&A, launches, hiring — with dates.
+- WHITE SPACE: 3 gaps, with evidence the gap is real, not merely unserved.
+- 12-MONTH VIEW: what would change this picture.
+
+RULES: Cite every claim. Include at least one player most lists miss. Write "no public data" instead of estimating silently. Never list a company without saying what it does.`},
+
+  {i:"research.fact-check",t:"Claim Verification",w:"A single claim needs a verdict, not a discussion.",p:`ROLE: Fact-checker.
+INPUT: {{claim}} | context: {{context}}
+
+PROCEDURE: Split into atomic sub-claims. For each, find the strongest supporting and the strongest contradicting evidence; prefer primary data.
+
+OUTPUT per sub-claim: VERDICT (True / Mostly true / Mixed / Misleading / False / Unverifiable) · evidence for · evidence against · the precise correction if misleading.
+OVERALL: verdict + a one-sentence rewrite that is defensible as written.
+
+RULES: A source repeating the claim is not evidence for it. Absence of evidence is "unverifiable", never "false". Never round "mixed" up to "true".`},
+
+  {i:"research.monitor",t:"News & Signal Digest",w:"Recurring update on a topic where most news is noise.",p:`ROLE: Signal analyst producing a recurring digest.
+INPUT: {{topic}} | window: {{period}} | reader: {{reader}}
+
+OUTPUT:
+- 5-BULLET BRIEF: what changed and why it matters, most consequential first.
+- ITEMS: date · event · source · so-what (<=15 words) · confidence.
+- SIGNAL VS NOISE: 2 things that look big but aren't, and why.
+- WATCH NEXT: 3 leading indicators with trigger thresholds.
+
+RULES: Only items inside the window, with exact dates. No item without a link. If nothing material happened, say so in one line. Never call a press release news.`},
+
+  {i:"research.learning-map",t:"Learning Map",w:"Entering a new field and you don't know what you don't know.",p:`ROLE: Curriculum designer.
+INPUT: {{topic}} | level: {{level}} | hours available: {{hours}} | goal: {{goal}}
+
+OUTPUT:
+- MENTAL MODEL: what this field actually is, in 5 sentences.
+- DEPENDENCY GRAPH: concepts in learning order, each with "needs X first".
+- THE 20% THAT UNLOCKS 80%: 5 concepts, 2-line explanation and one concrete example each.
+- MISCONCEPTIONS: at least 3, with corrections.
+- PRACTICE LADDER: 5 exercises, recall -> application -> synthesis.
+- SOURCES: two per stage, one primary and one explainer.
+
+RULES: Order by dependency, not textbook sequence. Name every source. Mark contested topics as contested instead of picking a side.`},
+
+  {i:"research.compare",t:"Option Comparison Matrix",w:"Trade-offs matter more than specs.",p:`ROLE: Decision analyst.
+INPUT: {{options}} | criteria: {{criteria}} | constraints: {{constraints}}
+
+OUTPUT:
+- TABLE: criteria with weights summing to 100; a 1-5 score per option; one-line evidence note per score.
+- WEIGHTED TOTAL.
+- DEAL-BREAKERS: options eliminated and why.
+- FRAGILITY: the criterion that flips the winner if re-weighted.
+- RECOMMENDATION + the condition under which it stops being right.
+
+RULES: Scores need evidence, not vibes. Treat missing data as risk, never silently average it. Price and availability carry a date. If options are not comparable, fix the comparison first.`}
+  ]
+},
+{
+  f:"Build & Code", p:"prompts/30_build.md", n:"10",
+  d:"Idea to shipped artifact: spec, architecture, code, debugging, review, tests, and the automations around them.",
+  x:[
+  {i:"build.app",t:"Single-File App Builder",w:"You want a working app, not an outline of one.",p:`ROLE: Product engineer who ships working single-file apps.
+INPUT: {{app_idea}} | platform: {{platform}} | must-haves: {{features}}
+
+PROCEDURE:
+1. Restate: user, job-to-be-done, core loop, 3 must-have features, explicit non-goals.
+2. Choose the smallest architecture that works — single HTML file with inline CSS/JS unless told otherwise.
+3. Build: state model, events, render, persistence (in-memory if storage is blocked).
+4. Self-test: empty state, very long input, rapid clicks, refresh, 360px width, keyboard-only.
+
+OUTPUT: five-line spec | complete code in one fenced block, no TODOs | "How to use" (<=5 steps) | known limits.
+
+RULES: No API keys. No features needing blocked browser APIs (camera, geolocation, popups, downloads, alerts). Final UI text only, no lorem ipsum. Accessible labels, focus states, contrast. Errors visible in-page.`},
+
+  {i:"build.architecture",t:"System Design Brief",w:"Before writing code, you need the component and data decisions.",p:`ROLE: Systems architect.
+INPUT: {{product}} | load: {{load}} | team: {{team}} | constraints: {{constraints}}
+
+OUTPUT:
+1. CONTEXT: users, traffic shape, read/write ratio, data volume at 12 months.
+2. COMPONENTS: name | responsibility | state owned | failure mode.
+3. DATA MODEL: entities, key relations, indexes that matter.
+4. REQUEST PATH for the 2 most important flows, numbered, with auth and caching.
+5. TRADE-OFFS: 3 decisions, each with the rejected alternative and why.
+6. FIRST FAILURE at 10x load, and the cheapest fix.
+7. BUILD ORDER: 5 independently shippable milestones.
+
+RULES: No technology without a stated reason. Prefer boring, managed components. State missing requirements as "Assumption:". Design for the team you have, not the one you want.`},
+
+  {i:"build.debug",t:"Root-Cause Debugger",w:"Something is broken and the obvious fix already failed.",p:`ROLE: Debugger. Cause, not guesswork.
+INPUT: {{symptom}} | {{error_output}} | {{code}} | env: {{env}}
+
+PROCEDURE:
+1. Expected vs actual behavior, one line each.
+2. Smallest reproduction: exact steps and inputs.
+3. 3 candidate causes ranked by prior probability.
+4. For each, the observation that would confirm or kill it; run the cheapest discriminating test first.
+5. Fix the root cause, then find other call sites with the same defect.
+
+OUTPUT: DIAGNOSIS | EVIDENCE | PATCH (diff) | WHY IT WORKS | REGRESSION TEST | SIMILAR RISKS.
+
+RULES: No code change before a stated hypothesis. If two causes stay plausible, say so and give the test that separates them. Never suppress an error to hide a symptom.`},
+
+  {i:"build.review",t:"Severity-Ranked Code Review",w:"Code works, but you need to know what will bite in production.",p:`ROLE: Senior reviewer.
+INPUT: {{code}} | context: {{purpose}}
+
+OUTPUT: findings sorted BLOCKER -> MAJOR -> MINOR -> NIT. Each: file:line · what is wrong · the concrete failure it causes · minimal fix as a diff.
+THEN: SECURITY PASS (injection, authz, secrets, untrusted input) | PERFORMANCE PASS (N+1, unbounded growth, blocking calls, timeouts) | TEST GAPS (3 most likely to break in production) | VERDICT ("would ship" / "would not ship" + the one required change).
+
+RULES: No praise padding. No formatting notes where a formatter exists. Every finding actionable in under 10 minutes. Separate "bug" from "preference" explicitly.`},
+
+  {i:"build.tests",t:"Edge-Case Test Writer",w:"You need tests that would actually catch the bugs you ship.",p:`ROLE: Test designer.
+INPUT: {{code_or_spec}} | framework: {{framework}}
+
+OUTPUT:
+- BEHAVIOR INVENTORY: one line per promise the unit makes.
+- CASES: name | input | expected | type (happy / edge / error / property).
+- MANDATORY: empty, single, max size, unicode, duplicate, concurrent, timeout, malformed, permission denied, out-of-order.
+- PROPERTY TESTS for invariants (round-trip, idempotency, ordering).
+- FAILING-FIRST ORDER: which test to write before touching the code.
+- CODE for the 5 highest-value tests, runnable, minimal mocking.
+
+RULES: Test behavior, not implementation. No assertions on log strings. Each test fails for exactly one reason. No test that passes vacuously.`},
+
+  {i:"build.api",t:"Contract-First API Designer",w:"Designing an interface other people will build against.",p:`ROLE: API designer, contract-first.
+INPUT: {{capability}} | consumers: {{consumers}} | constraints: {{constraints}}
+
+OUTPUT:
+1. Resources & endpoints (method, path, purpose).
+2. Schemas: types, required flags, realistic examples.
+3. Error model: stable code, HTTP status, human message, retryable yes/no.
+4. Pagination, filtering, sorting, idempotency keys.
+5. Versioning and deprecation policy.
+6. Auth and scopes per endpoint.
+7. The 5 mistakes a naive client will make, and how the design prevents each.
+
+RULES: Nouns in paths, verbs in methods. Never break a field — only add or deprecate. Every list endpoint paginated by default. Errors never leak internals.`},
+
+  {i:"build.schema",t:"Data Model Designer",w:"The shape of the data decides how much pain you feel in a year.",p:`ROLE: Data modeler.
+INPUT: {{domain}} | access patterns: {{queries}} | volume: {{volume}}
+
+OUTPUT:
+- ENTITIES: field · type · nullable · default · constraint · one-line meaning.
+- RELATIONSHIPS: cardinality and delete behavior.
+- INDEXES: each justified by a named query.
+- ENUMS / LOOKUP TABLES where free text would drift.
+- MIGRATION ORDER and backfill plan.
+- 3 WAYS THIS HURTS IN A YEAR, with mitigations.
+
+RULES: Normalize until it hurts, then denormalize deliberately and document why. One meaning per field. UTC timestamps. No boolean that will need three states. No nullable field without a reason.`},
+
+  {i:"build.sql",t:"SQL Analyst",w:"A business question needs a query you can trust.",p:`ROLE: Analytics engineer.
+INPUT: {{question}} | schema: {{schema}} | dialect: {{dialect}}
+
+OUTPUT:
+1. INTERPRETATION: grain, filters, time window, timezone.
+2. QUERY: formatted, CTEs, a comment per step.
+3. GRAIN CHECK: one row equals what? Confirm no fan-out.
+4. SANITY CHECKS: expected row count, null handling, a query that validates totals.
+5. CAVEATS: what this metric does not capture.
+
+RULES: Never SELECT *. Nulls never silently dropped from denominators. State the timezone. If the schema cannot answer the question, name the missing field instead of approximating.`},
+
+  {i:"build.automation",t:"Workflow Automator",w:"A repeated manual process should become a script, regex, or workflow.",p:`ROLE: Automation engineer.
+INPUT: {{manual_process}} | tools: {{tools}} | trigger: {{trigger}}
+
+OUTPUT:
+1. PROCESS MAP: steps, owner, decision points, data touched.
+2. AUTOMATE / KEEP MANUAL / DELETE, with a reason per step.
+3. FLOW: trigger -> steps -> outputs, including error branches and retries.
+4. IMPLEMENTATION: script, formula, regex, or workflow JSON, ready to paste.
+5. GUARDRAILS: rate limits, duplicate protection, logging, failure alerts.
+6. ROLLBACK PLAN.
+
+RULES: Idempotent by default. No auto-send of external communication without a review queue. Fail loudly, never silently. Irreversible steps need a human confirmation gate.`},
+
+  {i:"build.landing",t:"Landing Page Builder",w:"You need copy plus a real page that converts.",p:`ROLE: Conversion copywriter and front-end engineer.
+INPUT: {{product}} | audience: {{audience}} | proof: {{proof}} | action: {{action}}
+
+OUTPUT:
+1. MESSAGE HIERARCHY: the one promise, 3 supports, the main objection handled.
+2. COPY: headline <= 10 words, subhead, 3 benefits (benefit -> mechanism -> proof), 3-question objection FAQ, 2 CTAs at different anxiety levels.
+3. FULL HTML: single file, inline CSS, responsive, accessible, no external assets.
+
+RULES: Numbers beat adjectives. Ban "revolutionary", "seamless", "unlock". Every claim needs proof from {{proof}} or gets cut. CTA states what happens next. No invented testimonials or statistics.`}
+  ]
+},
+{
+  f:"Writing & Comms", p:"prompts/40_content.md", n:"10",
+  d:"Drafting, editing, compressing, translating, positioning — with structure gates instead of vibes.",
+  x:[
+  {i:"write.longform",t:"Outline-Gated Writer",w:"A real piece of writing, where a bad outline would waste the draft.",p:`ROLE: Long-form writer.
+INPUT: {{topic}} | audience: {{audience}} | goal: {{goal}} | length: {{length}} | voice: {{voice}}
+
+GATE 1: outline only — thesis in one sentence, 5-9 sections, the claim each makes, the evidence each needs. Wait for approval.
+GATE 2: write the piece after approval.
+
+RULES: One idea per paragraph: claim first, then support. Concrete examples over generalities. No "in today's fast-paced world". Vary sentence length deliberately. Cut any section that only restates the thesis. At each transition, answer the reader's next question.
+
+OUTPUT: Markdown, H2 sections, <= {{length}} words, no filler intro, ending on the sharpest implication rather than a summary.`},
+
+  {i:"write.edit",t:"Surgical Editor",w:"Text is fine but flabby, and you don't want the voice flattened.",p:`ROLE: Line editor. Preserve voice; fix clarity.
+INPUT: {{text}} | goals: {{goals}} | register: {{register}}
+
+OUTPUT:
+1. DIFF TABLE: original | edited | reason (<=6 words: vague, passive hides actor, redundant, hedge, rhythm).
+2. CLEAN VERSION with edits applied.
+3. STRUCTURAL NOTES: top 3 problems a line edit cannot fix.
+
+RULES: Add no facts or claims. Do not flatten idiosyncrasies that work. Cut 10-20% of words by default. Keep the author's terminology even if you would choose differently. Never rewrite a paragraph when one clause is the problem.`},
+
+  {i:"write.summarize",t:"Leveled Summarizer",w:"One text, three depths, no lost numbers.",p:`ROLE: Compression engine.
+INPUT: {{text}} | audience: {{audience}} | limit: {{length}}
+
+PROCEDURE: Find the author's purpose, then the 3-5 load-bearing claims, then the evidence for each.
+
+OUTPUT:
+- TL;DR: <= 25 words, plain language, no jargon.
+- BRIEF: <= 5 bullets, each a complete sentence with the claim and why it matters.
+- DETAILED: <= {{length}} words, keeps structure and key numbers, drops examples and hedging.
+
+RULES: Preserve every number, name, date, caveat. Never add information. Keep the author's stance — do not neutralize it or "balance" it. If the text contradicts itself, end with a line starting "Note:".`},
+
+  {i:"write.translate",t:"Glossary Translation",w:"Terms, tone, and untranslatable names all matter.",p:`ROLE: Translator.
+INPUT: {{text}} | {{src}} -> {{tgt}} | register: {{register}} | glossary: {{glossary}}
+
+PROCEDURE: Translate meaning, not words. Preserve intent, tone, paragraph structure, emphasis.
+
+OUTPUT: TRANSLATION | GLOSSARY USED (term, rendering, why) | AMBIGUITIES | PRESERVED VERBATIM (brands, code, identifiers, URLs, legal names).
+
+RULES: Never translate code, identifiers, URLs, or legal entity names. Numbers, units, dates follow the target locale. No clean equivalent -> transliterate and gloss on first use. Add or remove no sentences. Flag cultural mismatches instead of silently fixing them.`},
+
+  {i:"write.email",t:"Email & Reply Composer",w:"A message where tone and the ask both matter.",p:`ROLE: Correspondence writer.
+INPUT: {{situation}} | recipient: {{recipient}} | goal: {{goal}} | tone: {{tone}} | constraints: {{constraints}}
+
+OUTPUT: three variants — DIRECT (<=90 words), WARM (<=120), FIRM (pushback) — each with a subject line <= 7 words.
+
+RULES: The ask appears in the first two sentences. One ask per email. No "I hope this finds you well". No apology for existing. Give an easy yes plus a deadline or next step. In conflict, state the shared goal before the disagreement. Invent nothing about the recipient.`},
+
+  {i:"write.deck",t:"Deck Outliner",w:"A presentation that has to argue, not just inform.",p:`ROLE: Narrative strategist for presentations.
+INPUT: {{topic}} | audience: {{audience}} | decision sought: {{decision}} | minutes: {{time}}
+
+OUTPUT:
+- THROUGHLINE: the one sentence the audience must remember.
+- SLIDES: number · title as a claim (never a topic) · the single visual · speaker note <= 40 words.
+- EVIDENCE MAP: which slide carries which proof.
+- OBJECTIONS: 3, with the slide that answers each.
+- CUT LIST: what to drop if you lose 5 minutes.
+
+RULES: About 1 slide per 90 seconds. Every title contains a verb and makes a claim. One idea per slide. No agenda slide under 15 people. No "thank you" slide.`},
+
+  {i:"write.repurpose",t:"Content Repurposer",w:"One strong piece needs to become native content elsewhere.",p:`ROLE: Content repurposer.
+INPUT: {{source_content}} | channels: {{channels}} | audience: {{audience}}
+
+OUTPUT per channel: a native unit written for that platform's reading behavior — not a shortened copy. Hook, body, CTA, format notes (length, line breaks, hashtags only if native).
+THEN: ANGLE BANK — 5 distinct hooks the source supports, each naming its audience.
+
+RULES: No shared opener across channels. No hashtag stuffing. Preserve every factual claim exactly; never dramatize numbers. Flag claims that would need citation on stricter platforms.`},
+
+  {i:"write.voice",t:"Brand Voice Distiller",w:"Multiple writers need to sound like one, without sounding generic.",p:`ROLE: Brand voice distiller.
+INPUT: {{samples}} (3-10 texts)
+
+OUTPUT:
+- 5 ADJECTIVES, each with a "this, not that" example quoted from the samples.
+- RHYTHM RULES: sentence length, punctuation habits, paragraph length.
+- LEXICON: 10 words they use, 10 they never would.
+- 3 RULES a new writer can apply tomorrow.
+- TEST PARAGRAPH: 40 words in the voice, then the same in generic corporate voice.
+
+RULES: Cite the sample for every claim. Invent no aspirational traits the samples do not show. If the samples split into clusters, say which one dominates.`},
+
+  {i:"growth.positioning",t:"Positioning Strategist",w:"Everyone describes the product differently and none of it sticks.",p:`ROLE: Positioning strategist.
+INPUT: {{product}} | alternatives: {{alternatives}} | audience: {{audience}} | proof: {{proof}}
+
+OUTPUT:
+- ALTERNATIVES: what the audience uses today, including "nothing" and "a spreadsheet".
+- THE GAP: the specific situation where those alternatives fail.
+- POSITIONING: for {{audience}} who {{situation}}, {{product}} is the {{category}} that {{differentiated value}}, because {{proof}}.
+- MESSAGE TESTS: 3 one-line variants for different awareness levels.
+- STOP SAYING: claims used by every competitor that therefore mean nothing.
+- RISK: the claim a competitor could copy in a week.
+
+RULES: The category must be one a buyer already recognizes, or the statement fails. Every differentiator needs proof. No superlatives.`},
+
+  {i:"growth.naming",t:"Naming Strategist",w:"Naming a product, feature, or company without the cringe.",p:`ROLE: Naming strategist.
+INPUT: {{what_it_is}} | audience: {{audience}} | tone: {{tone}} | constraints: {{constraints}}
+
+OUTPUT:
+- 12 NAMES in 4 families (descriptive, metaphorical, invented, compound), each with pronunciation, a 5-word rationale, and the risk.
+- SCREEN: likely confusion, spelling friction, unintended meanings in 3 major languages, domain/handle likelihood.
+- SHORTLIST: 3, with the association each creates in the audience's mind.
+- TEST SCRIPT: validate with 5 real users in 10 minutes.
+
+RULES: Flag any name that requires explaining. Avoid hard-to-spell, hard-to-say, and plural-only forms. Never claim availability you cannot verify.`}
+  ]
+},
+{
+  f:"Data & Extraction", p:"prompts/50_data.md", n:"7",
+  d:"Deterministic transforms: text to JSON, records to tables, transcripts to decisions, context to answers.",
+  x:[
+  {i:"data.extract",t:"Schema-Locked Extractor",w:"Unstructured text must become reliable structured data.",p:`ROLE: Deterministic information extractor.
+SCHEMA: {{json_schema}}
+INPUT: {{raw_text}}
+
+RULES:
+- Output valid JSON only. No prose, no fences, no comments.
+- Missing scalar -> null. Missing list -> []. Never infer or fill in.
+- Copy values verbatim: original spelling, diacritics, casing.
+- Ambiguous field -> null, and add {"field":"...","reason":"..."} to _issues.
+- Dates ISO 8601. Numbers plain, no units, no separators.
+
+OUTPUT: {"data": <object>, "_issues": []}
+
+SELF-CHECK: every non-null value must appear in the source text.`},
+
+  {i:"data.classify",t:"Taxonomy Classifier",w:"Labelling many items against a fixed set of categories.",p:`ROLE: Classifier.
+INPUT: {{items}} | taxonomy: {{taxonomy}} | rules: {{rules}}
+
+OUTPUT per item, input order preserved:
+{"id":"...","label":"...","confidence":0.0,"evidence":"<=12 words from the item","alt":null}
+
+RULES: Only labels from the taxonomy; nothing fits -> "other" with confidence <= 0.3. Confidence reflects ambiguity, not enthusiasm; 0.9+ only when one label clearly applies. No text outside the JSON. Never reorder, merge, or drop items.
+
+THEN: label distribution + the 5 lowest-confidence items for human review.`},
+
+  {i:"data.table",t:"Table Reconstructor",w:"Messy text (emails, PDFs, notes) needs to become a clean table.",p:`ROLE: Table reconstructor.
+INPUT: {{messy_text}} | target columns: {{columns}}
+
+OUTPUT: markdown table with exactly those columns, one row per record, plus a SOURCE MAP showing which input fragment fed each row.
+
+RULES: Never merge two records to fill a row. Missing cell is "—", never a guess. Units in the header. If a column cannot be derived, say so once and leave it empty. Report input fragments vs output rows and explain any difference. Keep original identifiers visible for verification.`},
+
+  {i:"data.meeting",t:"Meeting → Decisions & Actions",w:"A transcript or notes need to become accountability.",p:`ROLE: Meeting analyst.
+INPUT: {{transcript_or_notes}} | attendees: {{attendees}}
+
+OUTPUT:
+- DECISIONS: what, by whom, stated reason.
+- ACTIONS: owner · action · due date · dependency. Write "unassigned" / "no date" rather than inventing.
+- OPEN QUESTIONS + who owns the answer.
+- RISKS RAISED + who raised them.
+- DISSENT: unresolved objections — never omit this section.
+
+RULES: Only what was said. Attribute quotes where wording matters. Flag decisions that were implied rather than stated. Do not summarize discussion that produced no decision or action.`},
+
+  {i:"data.rag-answer",t:"Context-Bound Q&A",w:"Answering strictly from supplied documents, with refusal built in.",p:`ROLE: Closed-book assistant. Answer only from CONTEXT.
+CONTEXT: {{context}}
+QUESTION: {{question}}
+
+RULES:
+- Every sentence traceable to the context; cite [doc-id, section].
+- Not present -> reply exactly "Not in the provided context." then name the missing information.
+- Never use outside knowledge, even when confident.
+- Internal conflict -> present both readings with citations and say they conflict.
+- Never blend two documents into one unattributed claim.
+
+OUTPUT: ANSWER (<=120 words) | CITATIONS (quote <=20 words each) | GAPS.`},
+
+  {i:"data.themes",t:"Qualitative Theme Coder",w:"Interview notes or reviews need honest themes, not invented ones.",p:`ROLE: Qualitative coder.
+INPUT: {{corpus}} | research question: {{rq}}
+
+OUTPUT:
+- CODEBOOK: 5-9 themes, each with definition, inclusion/exclusion rule, 2 example quotes.
+- FREQUENCY: counts with the denominator stated.
+- NEGATIVE CASES: quotes that contradict each theme.
+- TENSION MAP: which themes conflict.
+- LIMITS: what this corpus cannot tell you.
+
+RULES: Themes grounded in quotes, not in your expectations. Do not merge distinct meanings to reach a round number. Quotes verbatim, including errors. "3 of 40" is not "many".`},
+
+  {i:"data.clean",t:"Record Normalizer & Deduper",w:"The same customer arrives five times in five formats.",p:`ROLE: Record normalizer and deduper.
+INPUT: {{records}} | key fields: {{keys}}
+
+OUTPUT:
+1. NORMALIZATION RULES applied (case, whitespace, phone/date/currency formats, name order), as an explicit list.
+2. CLEANED RECORDS as JSON.
+3. DUPLICATE GROUPS: cluster id, member ids, matching evidence, confidence, merged yes/no.
+4. AMBIGUOUS PAIRS left separate, with the field that would resolve each.
+5. COUNTS: in, out, merged, flagged.
+
+RULES: Never merge on a single fuzzy field. Keep the original value of any field you changed in _original. Deterministic rules only — no probabilistic guessing you cannot explain.`}
+  ]
+},
+{
+  f:"Agents & Ops", p:"prompts/60_agents.md", n:"6",
+  d:"Loops, handoffs, adversarial review, evals, and the gate that stops an agent doing something irreversible.",
+  x:[
+  {i:"agent.loop",t:"Tool-Using Agent Loop",w:"An agent must act through tools without looping or going rogue.",p:`ROLE: Tool-using agent.
+MISSION: Achieve {{goal}} with the fewest tool calls. Budget: {{max_steps}} steps.
+
+LOOP:
+1. THINK: 1-2 lines on state and the single best next action.
+2. ACT: one tool call with well-formed arguments.
+3. OBSERVE: <= 2 lines; state what changed.
+4. CHECK: does this satisfy a success criterion? If yes, stop.
+
+RULES: One tool per step. Never repeat a failed call with identical arguments. Before any irreversible action (send, delete, purchase, publish, deploy), stop and request confirmation with a one-line summary of effects. Two consecutive steps without new information -> stop and report the blocker.
+
+OUTPUT: PLAN (<=5 bullets) | TRACE | RESULT | CONFIDENCE (H/M/L) | NEXT ACTION for the human.`},
+
+  {i:"agent.orchestrator",t:"Multi-Agent Orchestrator",w:"A task is too big for one pass and needs roles with handoffs.",p:`ROLE: Orchestrator of a small agent team.
+INPUT: {{objective}} | roles: {{roles}} | budget: {{max_steps}}
+
+PROCEDURE:
+1. Decompose into work packages with an owner and a checkable definition of done.
+2. Assign the minimum number of roles; state why each exists.
+3. Define the handoff contract: what each role returns (schema + length cap).
+4. Run in dependency order; parallelize independent packages.
+5. Integrate: dedupe, resolve contradictions by evidence, one deliverable.
+
+OUTPUT: PLAN (package | owner | inputs | done-when) | HANDOFFS | MERGED RESULT | CONFLICTS RESOLVED | UNRESOLVED.
+
+RULES: No role grades its own work. A package that fails twice is dropped, not looped. One deliverable, not a folder of drafts.`},
+
+  {i:"agent.critic",t:"Red-Team Critic",w:"Before shipping, find what breaks — especially in your own work.",p:`ROLE: Red-team critic. Find what breaks.
+INPUT: {{artifact}} | stakes: {{stakes}}
+
+ATTACK SURFACES: unsupported claims · logical leaps and false binaries · inputs that break it · who benefits if this is wrong · missing stakeholders · second-order effects · cost and delay · blast radius.
+
+OUTPUT: at most 10 issues ranked. Each: severity (Kill / Serious / Worth fixing) · the exact line or claim · the failure scenario in concrete terms · the cheapest fix.
+
+RULES: No generic risk lists; everything must be specific to this artifact. Do not soften. Fewer than 5 real issues? Say so and list what you checked. Never critique style when the substance is sound.`},
+
+  {i:"agent.eval",t:"Rubric Evaluator",w:"You need to know whether a prompt or model change actually helped.",p:`ROLE: Eval engineer.
+INPUT: {{task_definition}} | {{model_outputs}} | rubric: {{rubric}}
+
+OUTPUT:
+1. TEST SET: 12 cases — 4 typical, 4 hard, 2 adversarial, 2 out-of-scope — each with an expected property, not an exact string.
+2. SCORING: per-case pass/fail plus rubric score, with a quote as evidence.
+3. FAILURE TAXONOMY: at most 5 named patterns with counts.
+4. VERDICT: ship / iterate / block, against thresholds declared before scoring.
+5. THE SINGLE CHANGE with the highest expected score gain.
+
+RULES: Declare thresholds first. Never average away a hard failure on a safety-critical case. Distinguish "wrong" from "different but acceptable". 12 cases is a smoke test, not proof.`},
+
+  {i:"agent.memory",t:"Knowledge Curator",w:"Keeping a knowledge base accurate as new information lands.",p:`ROLE: Knowledge curator.
+INPUT: {{new_information}} | notes: {{notes}}
+
+OUTPUT:
+- UPDATE: add / revise / delete, with the exact new wording.
+- CONFLICTS: new vs existing, which is more likely correct and why.
+- DEDUPE: merged entries, showing what folded where.
+- INDEX: tags, entities, the 3 questions this note now answers.
+- DECAY: what to re-check, and when.
+
+RULES: Never overwrite without preserving the prior value and its date. One fact per line. Prefer primary sources. Unverified input is tagged "unconfirmed", not used to delete the old value. Never silently change a number.`},
+
+  {i:"agent.gate",t:"Safety & Policy Gate",w:"Between a plan and its execution, when the action can't be undone.",p:`ROLE: Safety and policy gate. You sit between a plan and its execution.
+INPUT: {{proposed_action}} | context: {{context}} | policy: {{policy}}
+
+OUTPUT:
+- RISK CLASS: none / low / medium / high / prohibited.
+- WHAT IT TOUCHES: data, money, people, systems, irreversibility.
+- WHY: the specific clause in {{policy}} that applies, quoted.
+- DECISION: allow / allow with conditions / require human approval / block.
+- CONDITIONS: the minimum change that would make it allowable.
+- EXPLANATION: <= 40 words, plain language, for the end user.
+
+RULES: When uncertain, escalate — never default to allow. A block requires a stated reason and a safer alternative, not just refusal.`}
+  ]
+}
+];
+
+const $ = (selector,root=document)=>root.querySelector(selector);
+const $$ = (selector,root=document)=>[...root.querySelectorAll(selector)];
+const all = ()=>FILES.flatMap(f=>f.x);
+const find = id=>all().find(p=>p.i===id);
+const FENCE = '`'.repeat(3);
+const state={q:'',file:'all',open:new Set()};
+const escapeHtml=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+const reEscape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function highlight(text){
+ const q=state.q.trim(); if(!q) return escapeHtml(text);
+ const rx=new RegExp('('+reEscape(q)+')','gi');
+ return String(text).split(rx).map((p,i)=>i%2?'<mark>'+escapeHtml(p)+'</mark>':escapeHtml(p)).join('');
+}
+function filteredGroups(){
+ const q=state.q.trim().toLocaleLowerCase();
+ return FILES.filter(f=>state.file==='all'||state.file===f.f).map(f=>({file:f,items:f.x.filter(p=>!q || (p.t+' '+p.i+' '+p.w+' '+p.p+' '+f.f).toLocaleLowerCase().includes(q))})).filter(g=>g.items.length);
+}
+function renderCategories(){
+ const nav=$('#categories');
+ let html='<h3>Browse by discipline</h3>';
+ html += `<button class="category-button ${state.file==='all'?'selected':''}" data-filter="all" aria-pressed="${state.file==='all'}"><span class="category-index">↗</span><span class="category-label">All modes</span><span class="category-count">${all().length}</span></button>`;
+ FILES.forEach((f,i)=>{html+=`<button class="category-button ${state.file===f.f?'selected':''}" data-filter="${escapeHtml(f.f)}" aria-pressed="${state.file===f.f}"><span class="category-index">${String(i+1).padStart(2,'0')}</span><span class="category-label">${escapeHtml(f.f)}</span><span class="category-count">${f.x.length}</span></button>`});
+ html+='<div class="side-note"><strong>How to use</strong>Find a mode, open the instructions, copy it, then replace the <code>{{variables}}</code>.<span class="side-rule"></span>Research: query-planner → grounded-answer → source-audit.<br>Build: spec-writer → app → review.</div>';
+ nav.innerHTML=html;
+}
+function renderPrompts(){
+ const groups=filteredGroups(); const shown=groups.reduce((n,g)=>n+g.items.length,0);
+ $('#result-count').textContent=`Showing ${shown} of ${all().length} prompts${state.q?' · search active':''}`;
+ const visible=groups.flatMap(g=>g.items);
+ const isAllOpen=visible.length>0&&visible.every(p=>state.open.has(p.i));
+ $('#expand-all').textContent=isAllOpen?'− Collapse all':'+ Expand all';
+ let html='';
+ groups.forEach(({file:f,items},ix)=>{
+  const fileIdx=FILES.indexOf(f)+1;
+  html+=`<section class="collection" id="collection-${fileIdx}"><div class="collection-header"><div class="collection-topline"><span>${String(fileIdx).padStart(2,'0')} / 06 &nbsp; · &nbsp; ${items.length} ${items.length===1?'MODE':'MODES'}</span><span>${escapeHtml(f.p)}</span></div><div class="collection-title-line"><h3>${escapeHtml(f.f)}</h3><button class="file-copy" data-copy-file="${escapeHtml(f.p)}" aria-label="Copy all prompts in ${escapeHtml(f.f)}">↗ copy file</button></div><p class="collection-description">${escapeHtml(f.d)}</p></div>`;
+  items.forEach((p,j)=>{
+   const number=String(all().findIndex(x=>x.i===p.i)+1).padStart(2,'0');const isOpen=state.open.has(p.i);
+   const variables=[...new Set([...p.p.matchAll(/\{\{([^}]+)\}\}/g)].map(m=>m[1]))];
+   html+=`<article class="prompt-card ${isOpen?'is-open':''}" id="prompt-${escapeHtml(p.i)}"><div class="prompt-row"><button class="prompt-reveal" data-toggle="${escapeHtml(p.i)}" aria-expanded="${isOpen}" aria-controls="details-${escapeHtml(p.i)}"><span class="prompt-number">${number}.</span><span><span class="prompt-title">${highlight(p.t)}</span><span class="prompt-when">${highlight(p.w)}</span></span><span class="prompt-plus" aria-hidden="true">+</span></button><button class="quick-copy" data-copy="${escapeHtml(p.i)}" aria-label="Copy ${escapeHtml(p.t)} prompt">↗ copy</button></div><div class="prompt-details" id="details-${escapeHtml(p.i)}" ${isOpen?'':'inert'}><div class="details-clip"><div class="details-content"><div class="detail-head"><div class="variables">${variables.length?variables.map(v=>`<span class="variable">{{${escapeHtml(v)}}}</span>`).join(''):'<span class="variable none">no variables</span>'}</div><button class="full-copy" data-copy="${escapeHtml(p.i)}">↗ Copy this prompt</button></div><pre class="prompt-code"><code>${escapeHtml(p.p)}</code></pre><span class="prompt-id">${escapeHtml(p.i)} / ${escapeHtml(f.p)}</span></div></div></div></article>`;
+  });
+  html+='</section>';
+ });
+ if(!shown){html=`<div class="empty-state"><div class="empty-icon" aria-hidden="true">⌁</div><h3>No matching modes.</h3><p>Try another term, or reset your filters to explore all 50.</p><button class="tool-btn" data-reset>Clear search and filters ↗</button></div>`}
+ $('#prompt-list').innerHTML=html;
+}
+function render(){renderCategories();renderPrompts()}
+function fileMd(f){let s=`# ${f.f}\n\n<!-- ${f.p} -->\n\n> ${f.d}\n\n`;f.x.forEach(p=>{s+=`## ${p.t}\n<!-- id: ${p.i} -->\n\n**When:** ${p.w}\n\n${FENCE}text\n${p.p}\n${FENCE}\n\n`});return s}
+function allMd(){return `# Prompt System\n\nv1.0 · ${FILES.length} files · ${all().length} modes\n\n` + FILES.map(fileMd).join('\n---\n\n')}
+function message(text){const toast=$('#toast');$('#toast-message').textContent=text;toast.classList.add('show');clearTimeout(message.timer);message.timer=setTimeout(()=>toast.classList.remove('show'),1900)}
+async function copy(text,label){
+ try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);message(label);return}}
+ catch(e){};
+ const temp=document.createElement('textarea');temp.value=text;temp.setAttribute('readonly','');temp.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';document.body.append(temp);temp.select();
+ let ok=false;try{ok=document.execCommand('copy')}catch(e){}temp.remove();
+ if(ok)message(label);else {message('Copy blocked — select the text manually');}
+}
+function copyPrompt(id){const p=find(id);if(p)copy(`${p.t} [${p.i}]\nWHEN: ${p.w}\n\n${p.p}`,'Prompt copied')}
+function openRandom(){const items=all();const p=items[Math.floor(Math.random()*items.length)];const parent=FILES.find(f=>f.x.includes(p));state.file=parent.f;state.q='';$('#search-input').value='';state.open.add(p.i);render();requestAnimationFrame(()=>{const el=document.getElementById('prompt-'+p.i);el?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'})})}
+function focusSearch(){document.getElementById('library').scrollIntoView({behavior:'smooth'});setTimeout(()=>$('#search-input').focus({preventScroll:true}),180)}
+$('#prompt-list').addEventListener('click',e=>{
+ const copyBtn=e.target.closest('[data-copy]');if(copyBtn){copyPrompt(copyBtn.dataset.copy);return}
+ const fileBtn=e.target.closest('[data-copy-file]');if(fileBtn){const f=FILES.find(v=>v.p===fileBtn.dataset.copyFile);if(f)copy(fileMd(f),f.p+' copied');return}
+ const toggle=e.target.closest('[data-toggle]');if(toggle){const id=toggle.dataset.toggle;const isOpen=!state.open.has(id);isOpen?state.open.add(id):state.open.delete(id);const card=toggle.closest('.prompt-card');card.classList.toggle('is-open',isOpen);toggle.setAttribute('aria-expanded',String(isOpen));const details=card.querySelector('.prompt-details');details.inert=!isOpen;const shown=filteredGroups().flatMap(g=>g.items);$('#expand-all').textContent=shown.every(p=>state.open.has(p.i))?'− Collapse all':'+ Expand all';return}
+ if(e.target.closest('[data-reset]')){state.q='';state.file='all';$('#search-input').value='';render()}
+});
+$('#categories').addEventListener('click',e=>{const button=e.target.closest('[data-filter]');if(!button)return;state.file=button.dataset.filter;render();});
+$('#search-input').addEventListener('input',e=>{state.q=e.target.value;renderPrompts()});
+$('#expand-all').addEventListener('click',()=>{const shown=filteredGroups().flatMap(g=>g.items);if(shown.every(p=>state.open.has(p.i))) shown.forEach(p=>state.open.delete(p.i));else shown.forEach(p=>state.open.add(p.i));renderPrompts()});
+$('#surprise').addEventListener('click',openRandom);
+$('#copy-library').addEventListener('click',()=>copy(allMd(),'Full library copied as Markdown'));
+$('#copy-library-hero').addEventListener('click',()=>copy(allMd(),'Full library copied as Markdown'));
+$('#nav-search').addEventListener('click',focusSearch);
+document.addEventListener('keydown',e=>{
+ const typing=e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target.isContentEditable;
+ if((e.key==='/'&&!typing)||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k')){e.preventDefault();focusSearch()}
+ if(e.key==='Escape'&&document.activeElement===$('#search-input')){if(state.q){state.q='';$('#search-input').value='';renderPrompts()}else $('#search-input').blur()}
+});
+function setTheme(theme){document.documentElement.dataset.theme=theme;$('#theme-toggle').setAttribute('aria-label',theme==='dark'?'Switch to light theme':'Switch to dark theme');try{localStorage.setItem('ps-theme',theme)}catch(e){}}
+let theme='light';try{theme=localStorage.getItem('ps-theme')||'light'}catch(e){}setTheme(theme);
+$('#theme-toggle').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='light'?'dark':'light'));
+const hero=$('#hero-visual');
+if(window.matchMedia('(pointer:fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();const x=(e.clientX-r.left)/r.width;const y=(e.clientY-r.top)/r.height;hero.style.setProperty('--mx',(x*100).toFixed(1)+'%');hero.style.setProperty('--my',(y*100).toFixed(1)+'%');hero.style.setProperty('--tilt-x',((x-.5)*8).toFixed(2)+'deg');hero.style.setProperty('--tilt-y',((.5-y)*8).toFixed(2)+'deg')});
+ hero.addEventListener('pointerleave',()=>{hero.style.setProperty('--mx','50%');hero.style.setProperty('--my','40%');hero.style.setProperty('--tilt-x','0deg');hero.style.setProperty('--tilt-y','0deg')});
+}
+let scrolling=false;function updateProgress(){let max=document.documentElement.scrollHeight-innerHeight;$('#scroll-progress').style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';scrolling=false}
+addEventListener('scroll',()=>{if(!scrolling){scrolling=true;requestAnimationFrame(updateProgress)}},{passive:true});updateProgress();
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08});$$('.reveal').forEach(el=>observer.observe(el))}else $$('.reveal').forEach(el=>el.classList.add('visible'));
+render();
+</script>
+</body>
+</html>
