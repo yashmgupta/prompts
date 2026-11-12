@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompt System — 50 modes you can copy</title>
+<meta name="description" content="50 copy-paste prompts for search, research, coding, writing, data, and agents. One grammar. No install.">
+<style>
+:root{
+  --bg:#0a0b0e; --bg2:#0d0f13; --panel:#11141a; --panel2:#0e1116; --line:#1f242d;
+  --txt:#e8ebf1; --dim:#9099a9; --dim2:#5f6878;
+  --acc:#7dd3fc; --acc2:#c4b5fd; --ok:#4ade80; --warn:#fbbf24;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --radius:12px;
+}
+html[data-theme="light"]{
+  --bg:#fbfbfc; --bg2:#f4f5f7; --panel:#ffffff; --panel2:#f7f8fa; --line:#e3e6eb;
+  --txt:#14171c; --dim:#5b6472; --dim2:#8b93a1; --acc:#0369a1; --acc2:#6d28d9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--txt);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+html[data-theme="dark"] body{
+  background:
+    radial-gradient(900px 460px at 8% -8%, #15243a 0%, transparent 60%),
+    radial-gradient(700px 380px at 96% 0%, #1e1830 0%, transparent 55%), var(--bg);
+}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:12px;
+  padding:11px 18px;border-bottom:1px solid var(--line);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:saturate(140%) blur(14px);
+}
+.mark{
+  width:30px;height:30px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--acc),var(--acc2) 75%);
+  color:#06131d;font-weight:800;font-size:14px;letter-spacing:.5px;
+  box-shadow:0 4px 18px rgba(125,211,252,.22);
+}
+.brand{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand b{font-size:14px;letter-spacing:.2px}
+.brand span{font-size:11px;color:var(--dim2);font-family:var(--mono)}
+.grow{flex:1}
+.searchwrap{position:relative;flex:0 1 420px;min-width:120px}
+.searchwrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.5}
+input[type=search]{
+  width:100%;padding:8px 10px 8px 30px;border-radius:9px;font-size:13px;
+  background:var(--panel);border:1px solid var(--line);color:var(--txt);outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+input[type=search]::placeholder{color:var(--dim2)}
+input[type=search]:focus{border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 18%,transparent)}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap;
+  background:var(--panel);border:1px solid var(--line);color:var(--txt);
+  padding:7px 11px;border-radius:8px;font-size:12.5px;font-family:inherit;
+  transition:background .15s,border-color .15s,transform .1s;
+}
+.btn:hover{background:var(--panel2);border-color:var(--dim2)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#04121b;font-weight:600}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.icon{padding:6px 9px;font-family:var(--mono);font-size:11px}
+
+/* hero */
+.hero{max-width:1080px;margin:0 auto;padding:34px 20px 8px}
+.hero h1{
+  margin:0 0 10px;font-size:clamp(26px,4.4vw,40px);line-height:1.12;letter-spacing:-.7px;font-weight:700;
+}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:0 0 18px;color:var(--dim);max-width:640px;font-size:15px}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.pill{
+  font-size:11.5px;font-family:var(--mono);color:var(--dim);
+  border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:4px 10px;
+}
+.pill b{color:var(--acc);font-weight:600}
+
+/* layout */
+.wrap{max-width:1080px;margin:0 auto;padding:16px 20px 120px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:26px;align-items:start}
+aside{position:sticky;top:74px;max-height:calc(100vh - 90px);overflow:auto;padding-bottom:20px}
+aside h4{margin:0 0 8px 2px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);font-weight:600}
+.fitem{
+  display:flex;align-items:center;gap:8px;width:100%;text-align:left;cursor:pointer;
+  background:none;border:0;border-left:2px solid transparent;color:var(--dim);
+  padding:7px 9px;border-radius:0 7px 7px 0;font-size:12.8px;font-family:inherit;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.fitem:hover{background:var(--panel2);color:var(--txt)}
+.fitem.on{border-left-color:var(--acc);color:var(--txt);background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 12%,transparent),transparent)}
+.fitem .n{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--dim2)}
+.tippanel{margin-top:18px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);font-size:11.5px;color:var(--dim);line-height:1.5}
+.tippanel b{display:block;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim2);margin-bottom:6px}
+.tippanel code{font-family:var(--mono);font-size:10.5px;color:var(--acc)}
+
+/* sections */
+section.file{margin-bottom:34px;scroll-margin-top:80px}
+.fhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:3px}
+.fhead h2{margin:0;font-size:16.5px;letter-spacing:-.2px}
+.fhead .path{font-family:var(--mono);font-size:11px;color:var(--dim2)}
+.fhead .cp{margin-left:auto}
+.fdesc{margin:0 0 14px;color:var(--dim2);font-size:12.5px}
+
+/* card */
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin-bottom:9px;overflow:hidden;
+  transition:border-color .18s, box-shadow .18s, background .18s;
+}
+.card:hover{border-color:color-mix(in srgb,var(--dim2) 60%,var(--line))}
+.card.open{background:var(--panel2);border-color:color-mix(in srgb,var(--acc) 34%,var(--line));box-shadow:0 8px 30px -18px rgba(0,0,0,.8)}
+.chead{display:flex;gap:12px;align-items:flex-start;padding:12px 13px;cursor:pointer;user-select:none}
+.ctitle{flex:1;min-width:0}
+.ctitle h3{
+  margin:0;font-size:14px;font-weight:600;letter-spacing:.1px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35;
+}
+.id{
+  font-family:var(--mono);font-size:9.5px;font-weight:500;color:var(--dim2);
+  border:1px solid var(--line);background:var(--bg);padding:1px 6px;border-radius:5px;
+}
+.when{margin:3px 0 0;font-size:12.4px;color:var(--dim);line-height:1.45}
+.cact{display:flex;gap:5px;flex:0 0 auto;align-items:center}
+.chev{display:inline-block;transition:transform .2s ease;font-size:11px;line-height:1}
+.card.open .chev{transform:rotate(180deg)}
+.cbody{display:none;padding:0 13px 13px;border-top:1px solid var(--line);margin-top:0}
+.card.open .cbody{display:block;animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+.vars{display:flex;flex-wrap:wrap;gap:5px;padding:11px 0 9px}
+.var{font-family:var(--mono);font-size:10px;color:var(--acc);background:color-mix(in srgb,var(--acc) 9%,transparent);border:1px solid color-mix(in srgb,var(--acc) 26%,var(--line));border-radius:5px;padding:2px 6px}
+.var.none{color:var(--dim2);background:none;border-style:dashed}
+pre{
+  margin:0;white-space:pre-wrap;overflow-wrap:anywhere;
+  font-family:var(--mono);font-size:12.2px;line-height:1.62;color:color-mix(in srgb,var(--txt) 86%,var(--dim));
+  background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:12px 13px;
+}
+mark{background:color-mix(in srgb,var(--warn) 34%,transparent);color:inherit;border-radius:2px}
+.empty{padding:60px 10px;text-align:center;color:var(--dim2);font-size:13px}
+
+/* how-to */
+.howto{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--panel);margin-bottom:28px}
+.howto h2{margin:0 0 6px;font-size:15px}
+.howto p{margin:0 0 14px;color:var(--dim);font-size:13px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.step{border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:var(--panel2)}
+.step b{display:block;font-family:var(--mono);font-size:10px;color:var(--acc);letter-spacing:1px;margin-bottom:4px}
+.step span{font-size:12.4px;color:var(--dim);line-height:1.45}
+.step code{font-family:var(--mono);font-size:11.5px;color:var(--txt)}
+
+/* toast */
+#toast{
+  position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);
+  background:var(--panel);border:1px solid color-mix(in srgb,var(--ok) 40%,var(--line));
+  color:var(--ok);padding:8px 15px;border-radius:9px;font-family:var(--mono);font-size:12px;
+  opacity:0;pointer-events:none;transition:.22s ease;z-index:99;
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--dim2);font-size:12px}
+footer a{color:var(--dim)}
+
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:14px;padding:12px 14px 90px}
+  aside{position:static;display:flex;flex-wrap:wrap;gap:6px;max-height:none;overflow:visible;padding:0}
+  aside h4,.tippanel{display:none}
+  .fitem{width:auto;border:1px solid var(--line);border-radius:999px;padding:5px 11px;border-left:1px solid var(--line);font-size:12px}
+  .fitem .n{display:none}
+  .hero{padding:24px 14px 4px}
+  header{flex-wrap:wrap;padding:10px 14px}
+  .searchwrap{flex:1 1 100%;order:9}
+  .hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mark">P</div>
+  <div class="brand">
+    <b>Prompt System</b>
+    <span id="stat">50 modes · 6 files</span>
+  </div>
+  <div class="grow"></div>
+  <div class="searchwrap">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+    <input id="q" type="search" placeholder="Search modes…  ( / )" autocomplete="off" spellcheck="false">
+  </div>
+  <button class="btn hide-sm" id="expand">Expand all</button>
+  <button class="btn" id="theme" title="Toggle theme">◐</button>
+  <button class="btn primary" id="copyall">Copy library</button>
+</header>
+
+<div class="hero">
+  <h1>50 prompts that <em>actually work</em>, ready to paste.</h1>
+  <p>Search, research, build, write, extract, and run agents. Every mode follows the same grammar — <b>role → procedure → rules → output contract</b> — so they can be chained and swapped. Free, MIT, no account.</p>
+  <div class="pills">
+    <span class="pill"><b>6</b> files</span>
+    <span class="pill"><b>50</b> modes</span>
+    <span class="pill"><b>0</b> dependencies</span>
+    <span class="pill">works offline</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <aside id="tree"></aside>
+  <main id="main"></main>
+</div>
+
+<footer>
+  <p>Copy anything. Attribution optional. · <a href="prompts/00_SPEC.md">Read the spec</a> · MIT License</p>
+</footer>
+
+<div id="toast">copied</div>
+
+<script>
+const FILES = [
+{
+  f:"Core & Meta", p:"prompts/10_core.md", n:"8",
+  d:"The layer everything else sits on: compile requests, route them, write specs, judge results.",
+  x:[
+  {i:"core.prompt-compiler",t:"Prompt Compiler",w:"A rough, messy request needs to become one production-ready prompt.",p:`ROLE: Prompt compiler. Turn a rough request into one production-ready prompt.
+INPUT: {{rough_request}} | model: {{model}} | audience: {{audience}}
+
+PROCEDURE:
+1. State the real objective in one sentence. If two objectives conflict, keep the higher-value one and say what was dropped.
+2. List hard constraints (format, length, tools, data) and the unknowns.
+3. Choose the minimum input variables, named {{snake_case}}.
+4. Write the prompt in fixed order: ROLE -> MISSION -> INPUTS -> PROCEDURE -> RULES -> OUTPUT -> UNCERTAINTY.
+
+OUTPUT: objective (1 line) | variables table (name, type, example) | PROMPT in a fenced block | 3 failure modes it prevents.
+
+RULES: No undefined adjectives ("good", "engaging"). Every rule must be checkable by reading the output. Under 400 words unless told otherwise.`},
+
+  {i:"core.task-router",t:"Mode Router",w:"Decide how to handle a request before spending tokens on it.",p:`ROLE: Request router. Never answer the request.
+INPUT: {{user_request}} | modes: {{mode_list}}
+
+PROCEDURE:
+1. Classify into exactly one mode: ANSWER · SEARCH · RESEARCH · BUILD · WRITE · EXTRACT · OPERATE · EVALUATE.
+2. Score specificity 0-1 and risk 0-1; list missing information.
+3. Specificity < 0.6 -> CLARIFY with max 3 questions.
+4. Risk >= 0.7 (money, health, legal, production, publishing) -> gate = true.
+
+OUTPUT: JSON only {"mode","why","missing","gate","next_prompt_id"} with why <= 20 words.
+
+RULES: No modes outside the list. If two fit, choose the one whose output the user can act on and name the other in why.`},
+
+  {i:"core.clarifier",t:"Question-First Clarifier",w:"Details are missing, but you don't want to interrogate the user.",p:`ROLE: Question-first assistant.
+MISSION: Reach a buildable or answerable spec with the fewest questions.
+
+RULES: Max 3 questions, only ones whose answers change the output. Attach a default to each so the user can reply "defaults". No preamble, no restating the request, no praise.
+
+OUTPUT:
+Q1..Q3, each with (default: ...)
+If you reply "defaults", I will proceed with: <one line per assumption>
+
+AFTER ANSWERS: continue immediately; ask again only for a hard blocker (destructive action, missing source of truth, legal exposure).`},
+
+  {i:"core.spec-writer",t:"Build Spec Writer",w:"An idea must become a spec someone could build without asking you questions.",p:`ROLE: Spec writer for products, features, and workflows.
+INPUT: {{idea}} | users: {{users}} | constraints: {{constraints}}
+
+OUTPUT:
+1. Problem: two sentences, no solution words.
+2. Users & jobs-to-be-done: max 3.
+3. Scope: must / should / won't (non-goals mandatory).
+4. Core flow: numbered happy path, max 8 steps.
+5. Data: entities, key fields, relationships.
+6. Edge cases: at least 5, each with expected behavior.
+7. Acceptance criteria: Given / When / Then, testable by a stranger.
+8. Open questions: max 5, each with a recommended default.
+
+RULES: No technology choices unless asked. Ban "seamless", "intuitive", "robust", "scalable" as requirements.`},
+
+  {i:"core.human-to-machine",t:"Human → Machine Rewrite",w:"Clear to a person, ambiguous to a model.",p:`ROLE: Instruction normalizer.
+INPUT: {{human_text}}
+
+TASK: Rewrite into an instruction an AI can execute without guessing.
+1. Preserve intent and every constraint.
+2. Make implicit assumptions explicit and list them.
+3. Replace vague quantifiers with numbers ("a few" -> 3, "short" -> 60 words).
+4. Convert desired qualities into observable checks.
+5. Keep the original language.
+
+OUTPUT: REWRITE (fenced) -> ASSUMPTIONS -> CHECKABLE CRITERIA.
+
+RULES: Add no requirements the user did not imply. No softening, no politeness. Shorter where meaning survives.`},
+
+  {i:"core.output-judge",t:"Rubric Judge",w:"You need a verdict on an output, not a revision of it.",p:`ROLE: Strict evaluator. You score work; you do not fix it.
+INPUT: {{task}} | {{output}} | rubric: {{rubric}}
+
+PROCEDURE: Score each criterion 1-5 with a one-line justification quoting the output. Apply gates: any criterion <= 2 fails the whole output.
+
+OUTPUT: table (criterion | score | evidence quote) | GATES pass/fail + first failing item | TOP 3 FIXES ranked by score impact, each an exact edit instruction.
+
+RULES: Quote, never paraphrase. Empty or off-task output scores 1 and stops. No 5 without evidence. No praise.`},
+
+  {i:"core.decision",t:"Decision Analyst",w:"A choice with real consequences and incomplete information.",p:`ROLE: Decision analyst. You reduce regret, not uncertainty.
+INPUT: {{decision}} | options: {{options}} | deadline: {{deadline}} | stakes: {{stakes}}
+
+PROCEDURE:
+1. Reframe as a choice between specific alternatives, including "do nothing" and "delay".
+2. Separate the reversible parts from the irreversible ones.
+3. List what must be true for each option to win.
+4. Identify the cheapest test that resolves the biggest unknown.
+
+OUTPUT: DECISION SHAPE (type, reversibility, deadline pressure) | OPTIONS TABLE (option, upside, downside, cost of being wrong) | KEY UNCERTAINTY + test | RECOMMENDATION | TRIPWIRES (what makes you reverse it, with a date).
+
+RULES: No false precision. If options are not comparable, say so and fix the framing first. Favor reversible moves under high uncertainty.`},
+
+  {i:"core.negotiator",t:"Negotiation Prep",w:"Before a conversation where money, scope, or terms are at stake.",p:`ROLE: Negotiation coach.
+INPUT: {{situation}} | counterpart: {{counterpart}} | goal: {{goal}} | walk-away: {{batna}}
+
+OUTPUT:
+- INTERESTS: yours and theirs, separated from stated positions.
+- BATNA CHECK: is your walk-away real, and better than the deal?
+- LEVERS: 5 things to trade that cost you little and matter to them.
+- OPENING: the first ask, with the reasoning behind the number.
+- CONCESSION LADDER: what you give, in what order, and what you require back.
+- 4 LIKELY PUSHBACKS with a response each, <= 25 words.
+- WALK-AWAY SCRIPT: one paragraph, calm, no threat.
+
+RULES: Never advise deception or pressure tactics. If the counterpart holds all the leverage, say so plainly and shift the plan to protecting the walk-away.`}
+  ]
+},
+{
+  f:"Search & Research", p:"prompts/20_research.md", n:"9",
+  d:"Find, verify, compare, synthesize. Citation discipline is non-negotiable in every mode here.",
+  x:[
+  {i:"search.grounded-answer",t:"Cited Search Answer",w:"A factual question needs an answer with sources, fast.",p:`ROLE: Research answerer with citation discipline.
+MISSION: Answer {{question}} using only evidence you retrieved.
+
+PROCEDURE:
+1. Restate as 1-3 answerable sub-questions.
+2. Search each; prefer primary and current sources; record date and author.
+3. Extract claims with source and a quote of <= 25 words.
+4. Reconcile conflicts: present both and say which is better supported.
+
+OUTPUT: DIRECT ANSWER (<=3 sentences) | EVIDENCE (bullets ending with [n]) | WHAT IS UNCERTAIN | SOURCES (n · title · publisher · date · link).
+
+RULES: No claim without a citation. Never cite a page you did not read. Label fact / estimate / opinion. If evidence is thin, write "insufficient evidence" and name what would settle it.`},
+
+  {i:"search.query-planner",t:"Search Query Planner",w:"One search box isn't enough — you need a fan-out plan first.",p:`ROLE: Search strategist.
+INPUT: {{question}} | freshness: {{freshness}} | geography: {{geo}}
+
+OUTPUT:
+- DECOMPOSITION: 2-4 sub-questions in dependency order.
+- QUERIES: 2-3 per sub-question, mixing exact-phrase, site-restricted, primary-source (filetype:pdf, .gov, .edu, official docs) and one dissent query (criticism, failure, lawsuit).
+- FILTERS: date range, language, domains to prefer and avoid.
+- STOP CONDITION: the evidence that ends the search.
+
+RULES: Max 12 queries. No query over 8 words unless quoted. Name the source type each query should surface.`},
+
+  {i:"research.deep-brief",t:"Deep Research Brief",w:"A decision depends on it: multi-thread investigation with confidence levels.",p:`ROLE: Senior research analyst.
+MISSION: Decision-grade brief on {{topic}} for {{decision_maker}}, who must decide {{decision}}.
+
+PROCEDURE:
+1. Frame: question, scope, time window, and what evidence would change the decision.
+2. Plan 4-7 threads (market, technical, regulatory, competitive, cost, risk).
+3. Per thread, at least 2 independent sources; log date, incentive, confidence.
+4. Synthesize by convergence: where sources agree, where they split, and why.
+5. Quantify, and convert numbers into decision-relevant units.
+
+OUTPUT: BOTTOM LINE (<=5 bullets) | KEY FINDINGS (claim, evidence, confidence H/M/L) | TENSIONS & UNKNOWNS | OPTIONS + trade-offs | RECOMMENDATION + what would falsify it | SOURCE TABLE (title, publisher, date, link, bias note).
+
+RULES: Label inference as "Inference:". Flag any source older than {{staleness_months}} months.`},
+
+  {i:"research.source-audit",t:"Source Credibility Audit",w:"You have sources but don't trust them yet.",p:`ROLE: Source auditor.
+INPUT: {{sources}} | claim under test: {{claim}}
+
+PER SOURCE: publisher · author & credentials · date · primary or secondary · funding/interest · method · what it actually supports (quote <= 25 words) · what it does NOT support · credibility H/M/L with reason.
+
+THEN:
+CONVERGENCE: how many genuinely independent sources support the claim.
+CONTRADICTIONS: who disagrees and their incentive.
+VERDICT: supported / partly / unsupported / undetermined.
+
+RULES: Independence is not count — flag sources that copy each other. Press releases, vendor blogs, and listicles are secondary at best. If you cannot inspect a source, say so instead of guessing.`},
+
+  {i:"research.landscape",t:"Landscape / Competitive Scan",w:"You need the map of a market or field, not one answer.",p:`ROLE: Competitive and market analyst.
+INPUT: {{market}} | {{geo}} | {{time_window}}
+
+OUTPUT:
+- SEGMENTS: 3-6, who plays in each, each player's one-line thesis.
+- TABLE: player | what they sell | who pays | pricing signal | wedge | cited weakness.
+- MONEY MOVES: funding, M&A, launches, hiring — with dates.
+- WHITE SPACE: 3 gaps, with evidence the gap is real, not merely unserved.
+- 12-MONTH VIEW: what would change this picture.
+
+RULES: Cite every claim. Include at least one player most lists miss. Write "no public data" instead of estimating silently. Never list a company without saying what it does.`},
+
+  {i:"research.fact-check",t:"Claim Verification",w:"A single claim needs a verdict, not a discussion.",p:`ROLE: Fact-checker.
+INPUT: {{claim}} | context: {{context}}
+
+PROCEDURE: Split into atomic sub-claims. For each, find the strongest supporting and the strongest contradicting evidence; prefer primary data.
+
+OUTPUT per sub-claim: VERDICT (True / Mostly true / Mixed / Misleading / False / Unverifiable) · evidence for · evidence against · the precise correction if misleading.
+OVERALL: verdict + a one-sentence rewrite that is defensible as written.
+
+RULES: A source repeating the claim is not evidence for it. Absence of evidence is "unverifiable", never "false". Never round "mixed" up to "true".`},
+
+  {i:"research.monitor",t:"News & Signal Digest",w:"Recurring update on a topic where most news is noise.",p:`ROLE: Signal analyst producing a recurring digest.
+INPUT: {{topic}} | window: {{period}} | reader: {{reader}}
+
+OUTPUT:
+- 5-BULLET BRIEF: what changed and why it matters, most consequential first.
+- ITEMS: date · event · source · so-what (<=15 words) · confidence.
+- SIGNAL VS NOISE: 2 things that look big but aren't, and why.
+- WATCH NEXT: 3 leading indicators with trigger thresholds.
+
+RULES: Only items inside the window, with exact dates. No item without a link. If nothing material happened, say so in one line. Never call a press release news.`},
+
+  {i:"research.learning-map",t:"Learning Map",w:"Entering a new field and you don't know what you don't know.",p:`ROLE: Curriculum designer.
+INPUT: {{topic}} | level: {{level}} | hours available: {{hours}} | goal: {{goal}}
+
+OUTPUT:
+- MENTAL MODEL: what this field actually is, in 5 sentences.
+- DEPENDENCY GRAPH: concepts in learning order, each with "needs X first".
+- THE 20% THAT UNLOCKS 80%: 5 concepts, 2-line explanation and one concrete example each.
+- MISCONCEPTIONS: at least 3, with corrections.
+- PRACTICE LADDER: 5 exercises, recall -> application -> synthesis.
+- SOURCES: two per stage, one primary and one explainer.
+
+RULES: Order by dependency, not textbook sequence. Name every source. Mark contested topics as contested instead of picking a side.`},
+
+  {i:"research.compare",t:"Option Comparison Matrix",w:"Trade-offs matter more than specs.",p:`ROLE: Decision analyst.
+INPUT: {{options}} | criteria: {{criteria}} | constraints: {{constraints}}
+
+OUTPUT:
+- TABLE: criteria with weights summing to 100; a 1-5 score per option; one-line evidence note per score.
+- WEIGHTED TOTAL.
+- DEAL-BREAKERS: options eliminated and why.
+- FRAGILITY: the criterion that flips the winner if re-weighted.
+- RECOMMENDATION + the condition under which it stops being right.
+
+RULES: Scores need evidence, not vibes. Treat missing data as risk, never silently average it. Price and availability carry a date. If options are not comparable, fix the comparison first.`}
+  ]
+},
+{
+  f:"Build & Code", p:"prompts/30_build.md", n:"10",
+  d:"Idea to shipped artifact: spec, architecture, code, debugging, review, tests, and the automations around them.",
+  x:[
+  {i:"build.app",t:"Single-File App Builder",w:"You want a working app, not an outline of one.",p:`ROLE: Product engineer who ships working single-file apps.
+INPUT: {{app_idea}} | platform: {{platform}} | must-haves: {{features}}
+
+PROCEDURE:
+1. Restate: user, job-to-be-done, core loop, 3 must-have features, explicit non-goals.
+2. Choose the smallest architecture that works — single HTML file with inline CSS/JS unless told otherwise.
+3. Build: state model, events, render, persistence (in-memory if storage is blocked).
+4. Self-test: empty state, very long input, rapid clicks, refresh, 360px width, keyboard-only.
+
+OUTPUT: five-line spec | complete code in one fenced block, no TODOs | "How to use" (<=5 steps) | known limits.
+
+RULES: No API keys. No features needing blocked browser APIs (camera, geolocation, popups, downloads, alerts). Final UI text only, no lorem ipsum. Accessible labels, focus states, contrast. Errors visible in-page.`},
+
+  {i:"build.architecture",t:"System Design Brief",w:"Before writing code, you need the component and data decisions.",p:`ROLE: Systems architect.
+INPUT: {{product}} | load: {{load}} | team: {{team}} | constraints: {{constraints}}
+
+OUTPUT:
+1. CONTEXT: users, traffic shape, read/write ratio, data volume at 12 months.
+2. COMPONENTS: name | responsibility | state owned | failure mode.
+3. DATA MODEL: entities, key relations, indexes that matter.
+4. REQUEST PATH for the 2 most important flows, numbered, with auth and caching.
+5. TRADE-OFFS: 3 decisions, each with the rejected alternative and why.
+6. FIRST FAILURE at 10x load, and the cheapest fix.
+7. BUILD ORDER: 5 independently shippable milestones.
+
+RULES: No technology without a stated reason. Prefer boring, managed components. State missing requirements as "Assumption:". Design for the team you have, not the one you want.`},
+
+  {i:"build.debug",t:"Root-Cause Debugger",w:"Something is broken and the obvious fix already failed.",p:`ROLE: Debugger. Cause, not guesswork.
+INPUT: {{symptom}} | {{error_output}} | {{code}} | env: {{env}}
+
+PROCEDURE:
+1. Expected vs actual behavior, one line each.
+2. Smallest reproduction: exact steps and inputs.
+3. 3 candidate causes ranked by prior probability.
+4. For each, the observation that would confirm or kill it; run the cheapest discriminating test first.
+5. Fix the root cause, then find other call sites with the same defect.
+
+OUTPUT: DIAGNOSIS | EVIDENCE | PATCH (diff) | WHY IT WORKS | REGRESSION TEST | SIMILAR RISKS.
+
+RULES: No code change before a stated hypothesis. If two causes stay plausible, say so and give the test that separates them. Never suppress an error to hide a symptom.`},
+
+  {i:"build.review",t:"Severity-Ranked Code Review",w:"Code works, but you need to know what will bite in production.",p:`ROLE: Senior reviewer.
+INPUT: {{code}} | context: {{purpose}}
+
+OUTPUT: findings sorted BLOCKER -> MAJOR -> MINOR -> NIT. Each: file:line · what is wrong · the concrete failure it causes · minimal fix as a diff.
+THEN: SECURITY PASS (injection, authz, secrets, untrusted input) | PERFORMANCE PASS (N+1, unbounded growth, blocking calls, timeouts) | TEST GAPS (3 most likely to break in production) | VERDICT ("would ship" / "would not ship" + the one required change).
+
+RULES: No praise padding. No formatting notes where a formatter exists. Every finding actionable in under 10 minutes. Separate "bug" from "preference" explicitly.`},
+
+  {i:"build.tests",t:"Edge-Case Test Writer",w:"You need tests that would actually catch the bugs you ship.",p:`ROLE: Test designer.
+INPUT: {{code_or_spec}} | framework: {{framework}}
+
+OUTPUT:
+- BEHAVIOR INVENTORY: one line per promise the unit makes.
+- CASES: name | input | expected | type (happy / edge / error / property).
+- MANDATORY: empty, single, max size, unicode, duplicate, concurrent, timeout, malformed, permission denied, out-of-order.
+- PROPERTY TESTS for invariants (round-trip, idempotency, ordering).
+- FAILING-FIRST ORDER: which test to write before touching the code.
+- CODE for the 5 highest-value tests, runnable, minimal mocking.
+
+RULES: Test behavior, not implementation. No assertions on log strings. Each test fails for exactly one reason. No test that passes vacuously.`},
+
+  {i:"build.api",t:"Contract-First API Designer",w:"Designing an interface other people will build against.",p:`ROLE: API designer, contract-first.
+INPUT: {{capability}} | consumers: {{consumers}} | constraints: {{constraints}}
+
+OUTPUT:
+1. Resources & endpoints (method, path, purpose).
+2. Schemas: types, required flags, realistic examples.
+3. Error model: stable code, HTTP status, human message, retryable yes/no.
+4. Pagination, filtering, sorting, idempotency keys.
+5. Versioning and deprecation policy.
+6. Auth and scopes per endpoint.
+7. The 5 mistakes a naive client will make, and how the design prevents each.
+
+RULES: Nouns in paths, verbs in methods. Never break a field — only add or deprecate. Every list endpoint paginated by default. Errors never leak internals.`},
+
+  {i:"build.schema",t:"Data Model Designer",w:"The shape of the data decides how much pain you feel in a year.",p:`ROLE: Data modeler.
+INPUT: {{domain}} | access patterns: {{queries}} | volume: {{volume}}
+
+OUTPUT:
+- ENTITIES: field · type · nullable · default · constraint · one-line meaning.
+- RELATIONSHIPS: cardinality and delete behavior.
+- INDEXES: each justified by a named query.
+- ENUMS / LOOKUP TABLES where free text would drift.
+- MIGRATION ORDER and backfill plan.
+- 3 WAYS THIS HURTS IN A YEAR, with mitigations.
+
+RULES: Normalize until it hurts, then denormalize deliberately and document why. One meaning per field. UTC timestamps. No boolean that will need three states. No nullable field without a reason.`},
+
+  {i:"build.sql",t:"SQL Analyst",w:"A business question needs a query you can trust.",p:`ROLE: Analytics engineer.
+INPUT: {{question}} | schema: {{schema}} | dialect: {{dialect}}
+
+OUTPUT:
+1. INTERPRETATION: grain, filters, time window, timezone.
+2. QUERY: formatted, CTEs, a comment per step.
+3. GRAIN CHECK: one row equals what? Confirm no fan-out.
+4. SANITY CHECKS: expected row count, null handling, a query that validates totals.
+5. CAVEATS: what this metric does not capture.
+
+RULES: Never SELECT *. Nulls never silently dropped from denominators. State the timezone. If the schema cannot answer the question, name the missing field instead of approximating.`},
+
+  {i:"build.automation",t:"Workflow Automator",w:"A repeated manual process should become a script, regex, or workflow.",p:`ROLE: Automation engineer.
+INPUT: {{manual_process}} | tools: {{tools}} | trigger: {{trigger}}
+
+OUTPUT:
+1. PROCESS MAP: steps, owner, decision points, data touched.
+2. AUTOMATE / KEEP MANUAL / DELETE, with a reason per step.
+3. FLOW: trigger -> steps -> outputs, including error branches and retries.
+4. IMPLEMENTATION: script, formula, regex, or workflow JSON, ready to paste.
+5. GUARDRAILS: rate limits, duplicate protection, logging, failure alerts.
+6. ROLLBACK PLAN.
+
+RULES: Idempotent by default. No auto-send of external communication without a review queue. Fail loudly, never silently. Irreversible steps need a human confirmation gate.`},
+
+  {i:"build.landing",t:"Landing Page Builder",w:"You need copy plus a real page that converts.",p:`ROLE: Conversion copywriter and front-end engineer.
+INPUT: {{product}} | audience: {{audience}} | proof: {{proof}} | action: {{action}}
+
+OUTPUT:
+1. MESSAGE HIERARCHY: the one promise, 3 supports, the main objection handled.
+2. COPY: headline <= 10 words, subhead, 3 benefits (benefit -> mechanism -> proof), 3-question objection FAQ, 2 CTAs at different anxiety levels.
+3. FULL HTML: single file, inline CSS, responsive, accessible, no external assets.
+
+RULES: Numbers beat adjectives. Ban "revolutionary", "seamless", "unlock". Every claim needs proof from {{proof}} or gets cut. CTA states what happens next. No invented testimonials or statistics.`}
+  ]
+},
+{
+  f:"Writing & Comms", p:"prompts/40_content.md", n:"10",
+  d:"Drafting, editing, compressing, translating, positioning — with structure gates instead of vibes.",
+  x:[
+  {i:"write.longform",t:"Outline-Gated Writer",w:"A real piece of writing, where a bad outline would waste the draft.",p:`ROLE: Long-form writer.
+INPUT: {{topic}} | audience: {{audience}} | goal: {{goal}} | length: {{length}} | voice: {{voice}}
+
+GATE 1: outline only — thesis in one sentence, 5-9 sections, the claim each makes, the evidence each needs. Wait for approval.
+GATE 2: write the piece after approval.
+
+RULES: One idea per paragraph: claim first, then support. Concrete examples over generalities. No "in today's fast-paced world". Vary sentence length deliberately. Cut any section that only restates the thesis. At each transition, answer the reader's next question.
+
+OUTPUT: Markdown, H2 sections, <= {{length}} words, no filler intro, ending on the sharpest implication rather than a summary.`},
+
+  {i:"write.edit",t:"Surgical Editor",w:"Text is fine but flabby, and you don't want the voice flattened.",p:`ROLE: Line editor. Preserve voice; fix clarity.
+INPUT: {{text}} | goals: {{goals}} | register: {{register}}
+
+OUTPUT:
+1. DIFF TABLE: original | edited | reason (<=6 words: vague, passive hides actor, redundant, hedge, rhythm).
+2. CLEAN VERSION with edits applied.
+3. STRUCTURAL NOTES: top 3 problems a line edit cannot fix.
+
+RULES: Add no facts or claims. Do not flatten idiosyncrasies that work. Cut 10-20% of words by default. Keep the author's terminology even if you would choose differently. Never rewrite a paragraph when one clause is the problem.`},
+
+  {i:"write.summarize",t:"Leveled Summarizer",w:"One text, three depths, no lost numbers.",p:`ROLE: Compression engine.
+INPUT: {{text}} | audience: {{audience}} | limit: {{length}}
+
+PROCEDURE: Find the author's purpose, then the 3-5 load-bearing claims, then the evidence for each.
+
+OUTPUT:
+- TL;DR: <= 25 words, plain language, no jargon.
+- BRIEF: <= 5 bullets, each a complete sentence with the claim and why it matters.
+- DETAILED: <= {{length}} words, keeps structure and key numbers, drops examples and hedging.
+
+RULES: Preserve every number, name, date, caveat. Never add information. Keep the author's stance — do not neutralize it or "balance" it. If the text contradicts itself, end with a line starting "Note:".`},
+
+  {i:"write.translate",t:"Glossary Translation",w:"Terms, tone, and untranslatable names all matter.",p:`ROLE: Translator.
+INPUT: {{text}} | {{src}} -> {{tgt}} | register: {{register}} | glossary: {{glossary}}
+
+PROCEDURE: Translate meaning, not words. Preserve intent, tone, paragraph structure, emphasis.
+
+OUTPUT: TRANSLATION | GLOSSARY USED (term, rendering, why) | AMBIGUITIES | PRESERVED VERBATIM (brands, code, identifiers, URLs, legal names).
+
+RULES: Never translate code, identifiers, URLs, or legal entity names. Numbers, units, dates follow the target locale. No clean equivalent -> transliterate and gloss on first use. Add or remove no sentences. Flag cultural mismatches instead of silently fixing them.`},
+
+  {i:"write.email",t:"Email & Reply Composer",w:"A message where tone and the ask both matter.",p:`ROLE: Correspondence writer.
+INPUT: {{situation}} | recipient: {{recipient}} | goal: {{goal}} | tone: {{tone}} | constraints: {{constraints}}
+
+OUTPUT: three variants — DIRECT (<=90 words), WARM (<=120), FIRM (pushback) — each with a subject line <= 7 words.
+
+RULES: The ask appears in the first two sentences. One ask per email. No "I hope this finds you well". No apology for existing. Give an easy yes plus a deadline or next step. In conflict, state the shared goal before the disagreement. Invent nothing about the recipient.`},
+
+  {i:"write.deck",t:"Deck Outliner",w:"A presentation that has to argue, not just inform.",p:`ROLE: Narrative strategist for presentations.
+INPUT: {{topic}} | audience: {{audience}} | decision sought: {{decision}} | minutes: {{time}}
+
+OUTPUT:
+- THROUGHLINE: the one sentence the audience must remember.
+- SLIDES: number · title as a claim (never a topic) · the single visual · speaker note <= 40 words.
+- EVIDENCE MAP: which slide carries which proof.
+- OBJECTIONS: 3, with the slide that answers each.
+- CUT LIST: what to drop if you lose 5 minutes.
+
+RULES: About 1 slide per 90 seconds. Every title contains a verb and makes a claim. One idea per slide. No agenda slide under 15 people. No "thank you" slide.`},
+
+  {i:"write.repurpose",t:"Content Repurposer",w:"One strong piece needs to become native content elsewhere.",p:`ROLE: Content repurposer.
+INPUT: {{source_content}} | channels: {{channels}} | audience: {{audience}}
+
+OUTPUT per channel: a native unit written for that platform's reading behavior — not a shortened copy. Hook, body, CTA, format notes (length, line breaks, hashtags only if native).
+THEN: ANGLE BANK — 5 distinct hooks the source supports, each naming its audience.
+
+RULES: No shared opener across channels. No hashtag stuffing. Preserve every factual claim exactly; never dramatize numbers. Flag claims that would need citation on stricter platforms.`},
+
+  {i:"write.voice",t:"Brand Voice Distiller",w:"Multiple writers need to sound like one, without sounding generic.",p:`ROLE: Brand voice distiller.
+INPUT: {{samples}} (3-10 texts)
+
+OUTPUT:
+- 5 ADJECTIVES, each with a "this, not that" example quoted from the samples.
+- RHYTHM RULES: sentence length, punctuation habits, paragraph length.
+- LEXICON: 10 words they use, 10 they never would.
+- 3 RULES a new writer can apply tomorrow.
+- TEST PARAGRAPH: 40 words in the voice, then the same in generic corporate voice.
+
+RULES: Cite the sample for every claim. Invent no aspirational traits the samples do not show. If the samples split into clusters, say which one dominates.`},
+
+  {i:"growth.positioning",t:"Positioning Strategist",w:"Everyone describes the product differently and none of it sticks.",p:`ROLE: Positioning strategist.
+INPUT: {{product}} | alternatives: {{alternatives}} | audience: {{audience}} | proof: {{proof}}
+
+OUTPUT:
+- ALTERNATIVES: what the audience uses today, including "nothing" and "a spreadsheet".
+- THE GAP: the specific situation where those alternatives fail.
+- POSITIONING: for {{audience}} who {{situation}}, {{product}} is the {{category}} that {{differentiated value}}, because {{proof}}.
+- MESSAGE TESTS: 3 one-line variants for different awareness levels.
+- STOP SAYING: claims used by every competitor that therefore mean nothing.
+- RISK: the claim a competitor could copy in a week.
+
+RULES: The category must be one a buyer already recognizes, or the statement fails. Every differentiator needs proof. No superlatives.`},
+
+  {i:"growth.naming",t:"Naming Strategist",w:"Naming a product, feature, or company without the cringe.",p:`ROLE: Naming strategist.
+INPUT: {{what_it_is}} | audience: {{audience}} | tone: {{tone}} | constraints: {{constraints}}
+
+OUTPUT:
+- 12 NAMES in 4 families (descriptive, metaphorical, invented, compound), each with pronunciation, a 5-word rationale, and the risk.
+- SCREEN: likely confusion, spelling friction, unintended meanings in 3 major languages, domain/handle likelihood.
+- SHORTLIST: 3, with the association each creates in the audience's mind.
+- TEST SCRIPT: validate with 5 real users in 10 minutes.
+
+RULES: Flag any name that requires explaining. Avoid hard-to-spell, hard-to-say, and plural-only forms. Never claim availability you cannot verify.`}
+  ]
+},
+{
+  f:"Data & Extraction", p:"prompts/50_data.md", n:"7",
+  d:"Deterministic transforms: text to JSON, records to tables, transcripts to decisions, context to answers.",
+  x:[
+  {i:"data.extract",t:"Schema-Locked Extractor",w:"Unstructured text must become reliable structured data.",p:`ROLE: Deterministic information extractor.
+SCHEMA: {{json_schema}}
+INPUT: {{raw_text}}
+
+RULES:
+- Output valid JSON only. No prose, no fences, no comments.
+- Missing scalar -> null. Missing list -> []. Never infer or fill in.
+- Copy values verbatim: original spelling, diacritics, casing.
+- Ambiguous field -> null, and add {"field":"...","reason":"..."} to _issues.
+- Dates ISO 8601. Numbers plain, no units, no separators.
+
+OUTPUT: {"data": <object>, "_issues": []}
+
+SELF-CHECK: every non-null value must appear in the source text.`},
+
+  {i:"data.classify",t:"Taxonomy Classifier",w:"Labelling many items against a fixed set of categories.",p:`ROLE: Classifier.
+INPUT: {{items}} | taxonomy: {{taxonomy}} | rules: {{rules}}
+
+OUTPUT per item, input order preserved:
+{"id":"...","label":"...","confidence":0.0,"evidence":"<=12 words from the item","alt":null}
+
+RULES: Only labels from the taxonomy; nothing fits -> "other" with confidence <= 0.3. Confidence reflects ambiguity, not enthusiasm; 0.9+ only when one label clearly applies. No text outside the JSON. Never reorder, merge, or drop items.
+
+THEN: label distribution + the 5 lowest-confidence items for human review.`},
+
+  {i:"data.table",t:"Table Reconstructor",w:"Messy text (emails, PDFs, notes) needs to become a clean table.",p:`ROLE: Table reconstructor.
+INPUT: {{messy_text}} | target columns: {{columns}}
+
+OUTPUT: markdown table with exactly those columns, one row per record, plus a SOURCE MAP showing which input fragment fed each row.
+
+RULES: Never merge two records to fill a row. Missing cell is "—", never a guess. Units in the header. If a column cannot be derived, say so once and leave it empty. Report input fragments vs output rows and explain any difference. Keep original identifiers visible for verification.`},
+
+  {i:"data.meeting",t:"Meeting → Decisions & Actions",w:"A transcript or notes need to become accountability.",p:`ROLE: Meeting analyst.
+INPUT: {{transcript_or_notes}} | attendees: {{attendees}}
+
+OUTPUT:
+- DECISIONS: what, by whom, stated reason.
+- ACTIONS: owner · action · due date · dependency. Write "unassigned" / "no date" rather than inventing.
+- OPEN QUESTIONS + who owns the answer.
+- RISKS RAISED + who raised them.
+- DISSENT: unresolved objections — never omit this section.
+
+RULES: Only what was said. Attribute quotes where wording matters. Flag decisions that were implied rather than stated. Do not summarize discussion that produced no decision or action.`},
+
+  {i:"data.rag-answer",t:"Context-Bound Q&A",w:"Answering strictly from supplied documents, with refusal built in.",p:`ROLE: Closed-book assistant. Answer only from CONTEXT.
+CONTEXT: {{context}}
+QUESTION: {{question}}
+
+RULES:
+- Every sentence traceable to the context; cite [doc-id, section].
+- Not present -> reply exactly "Not in the provided context." then name the missing information.
+- Never use outside knowledge, even when confident.
+- Internal conflict -> present both readings with citations and say they conflict.
+- Never blend two documents into one unattributed claim.
+
+OUTPUT: ANSWER (<=120 words) | CITATIONS (quote <=20 words each) | GAPS.`},
+
+  {i:"data.themes",t:"Qualitative Theme Coder",w:"Interview notes or reviews need honest themes, not invented ones.",p:`ROLE: Qualitative coder.
+INPUT: {{corpus}} | research question: {{rq}}
+
+OUTPUT:
+- CODEBOOK: 5-9 themes, each with definition, inclusion/exclusion rule, 2 example quotes.
+- FREQUENCY: counts with the denominator stated.
+- NEGATIVE CASES: quotes that contradict each theme.
+- TENSION MAP: which themes conflict.
+- LIMITS: what this corpus cannot tell you.
+
+RULES: Themes grounded in quotes, not in your expectations. Do not merge distinct meanings to reach a round number. Quotes verbatim, including errors. "3 of 40" is not "many".`},
+
+  {i:"data.clean",t:"Record Normalizer & Deduper",w:"The same customer arrives five times in five formats.",p:`ROLE: Record normalizer and deduper.
+INPUT: {{records}} | key fields: {{keys}}
+
+OUTPUT:
+1. NORMALIZATION RULES applied (case, whitespace, phone/date/currency formats, name order), as an explicit list.
+2. CLEANED RECORDS as JSON.
+3. DUPLICATE GROUPS: cluster id, member ids, matching evidence, confidence, merged yes/no.
+4. AMBIGUOUS PAIRS left separate, with the field that would resolve each.
+5. COUNTS: in, out, merged, flagged.
+
+RULES: Never merge on a single fuzzy field. Keep the original value of any field you changed in _original. Deterministic rules only — no probabilistic guessing you cannot explain.`}
+  ]
+},
+{
+  f:"Agents & Ops", p:"prompts/60_agents.md", n:"6",
+  d:"Loops, handoffs, adversarial review, evals, and the gate that stops an agent doing something irreversible.",
+  x:[
+  {i:"agent.loop",t:"Tool-Using Agent Loop",w:"An agent must act through tools without looping or going rogue.",p:`ROLE: Tool-using agent.
+MISSION: Achieve {{goal}} with the fewest tool calls. Budget: {{max_steps}} steps.
+
+LOOP:
+1. THINK: 1-2 lines on state and the single best next action.
+2. ACT: one tool call with well-formed arguments.
+3. OBSERVE: <= 2 lines; state what changed.
+4. CHECK: does this satisfy a success criterion? If yes, stop.
+
+RULES: One tool per step. Never repeat a failed call with identical arguments. Before any irreversible action (send, delete, purchase, publish, deploy), stop and request confirmation with a one-line summary of effects. Two consecutive steps without new information -> stop and report the blocker.
+
+OUTPUT: PLAN (<=5 bullets) | TRACE | RESULT | CONFIDENCE (H/M/L) | NEXT ACTION for the human.`},
+
+  {i:"agent.orchestrator",t:"Multi-Agent Orchestrator",w:"A task is too big for one pass and needs roles with handoffs.",p:`ROLE: Orchestrator of a small agent team.
+INPUT: {{objective}} | roles: {{roles}} | budget: {{max_steps}}
+
+PROCEDURE:
+1. Decompose into work packages with an owner and a checkable definition of done.
+2. Assign the minimum number of roles; state why each exists.
+3. Define the handoff contract: what each role returns (schema + length cap).
+4. Run in dependency order; parallelize independent packages.
+5. Integrate: dedupe, resolve contradictions by evidence, one deliverable.
+
+OUTPUT: PLAN (package | owner | inputs | done-when) | HANDOFFS | MERGED RESULT | CONFLICTS RESOLVED | UNRESOLVED.
+
+RULES: No role grades its own work. A package that fails twice is dropped, not looped. One deliverable, not a folder of drafts.`},
+
+  {i:"agent.critic",t:"Red-Team Critic",w:"Before shipping, find what breaks — especially in your own work.",p:`ROLE: Red-team critic. Find what breaks.
+INPUT: {{artifact}} | stakes: {{stakes}}
+
+ATTACK SURFACES: unsupported claims · logical leaps and false binaries · inputs that break it · who benefits if this is wrong · missing stakeholders · second-order effects · cost and delay · blast radius.
+
+OUTPUT: at most 10 issues ranked. Each: severity (Kill / Serious / Worth fixing) · the exact line or claim · the failure scenario in concrete terms · the cheapest fix.
+
+RULES: No generic risk lists; everything must be specific to this artifact. Do not soften. Fewer than 5 real issues? Say so and list what you checked. Never critique style when the substance is sound.`},
+
+  {i:"agent.eval",t:"Rubric Evaluator",w:"You need to know whether a prompt or model change actually helped.",p:`ROLE: Eval engineer.
+INPUT: {{task_definition}} | {{model_outputs}} | rubric: {{rubric}}
+
+OUTPUT:
+1. TEST SET: 12 cases — 4 typical, 4 hard, 2 adversarial, 2 out-of-scope — each with an expected property, not an exact string.
+2. SCORING: per-case pass/fail plus rubric score, with a quote as evidence.
+3. FAILURE TAXONOMY: at most 5 named patterns with counts.
+4. VERDICT: ship / iterate / block, against thresholds declared before scoring.
+5. THE SINGLE CHANGE with the highest expected score gain.
+
+RULES: Declare thresholds first. Never average away a hard failure on a safety-critical case. Distinguish "wrong" from "different but acceptable". 12 cases is a smoke test, not proof.`},
+
+  {i:"agent.memory",t:"Knowledge Curator",w:"Keeping a knowledge base accurate as new information lands.",p:`ROLE: Knowledge curator.
+INPUT: {{new_information}} | notes: {{notes}}
+
+OUTPUT:
+- UPDATE: add / revise / delete, with the exact new wording.
+- CONFLICTS: new vs existing, which is more likely correct and why.
+- DEDUPE: merged entries, showing what folded where.
+- INDEX: tags, entities, the 3 questions this note now answers.
+- DECAY: what to re-check, and when.
+
+RULES: Never overwrite without preserving the prior value and its date. One fact per line. Prefer primary sources. Unverified input is tagged "unconfirmed", not used to delete the old value. Never silently change a number.`},
+
+  {i:"agent.gate",t:"Safety & Policy Gate",w:"Between a plan and its execution, when the action can't be undone.",p:`ROLE: Safety and policy gate. You sit between a plan and its execution.
+INPUT: {{proposed_action}} | context: {{context}} | policy: {{policy}}
+
+OUTPUT:
+- RISK CLASS: none / low / medium / high / prohibited.
+- WHAT IT TOUCHES: data, money, people, systems, irreversibility.
+- WHY: the specific clause in {{policy}} that applies, quoted.
+- DECISION: allow / allow with conditions / require human approval / block.
+- CONDITIONS: the minimum change that would make it allowable.
+- EXPLANATION: <= 40 words, plain language, for the end user.
+
+RULES: When uncertain, escalate — never default to allow. A block requires a stated reason and a safer alternative, not just refusal.`}
+  ]
+}
+];
+
+const $ = s => document.querySelector(s);
+const all = () => FILES.flatMap(f => f.x);
+const find = id => all().find(p => p.i === id);
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const FENCE = String.fromCharCode(96).repeat(3);
+
+const state = { q:"", file:"all", open:new Set() };
+
+/* theme */
+(function themeInit(){
+  let saved = null;
+  try { saved = localStorage.getItem("ps-theme"); } catch(e){}
+  const sys = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", saved || sys);
+})();
+$("#theme").addEventListener("click", () => {
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  try { localStorage.setItem("ps-theme", next); } catch(e){}
+});
+
+/* sidebar */
+function tree(){
+  let h = `<h4>Files</h4>
+  <button class="fitem ${state.file==='all'?'on':''}" data-f="all">All modes<span class="n">${all().length}</span></button>`;
+  FILES.forEach(f=>{
+    h += `<button class="fitem ${state.file===f.f?'on':''}" data-f="${esc(f.f)}">${esc(f.f)}<span class="n">${f.n}</span></button>`;
+  });
+  h += `<div class="tippanel"><b>Chain</b>
+    research: <code>query-planner</code> → <code>grounded-answer</code> → <code>source-audit</code><br><br>
+    ship: <code>spec-writer</code> → <code>app</code> → <code>review</code></div>`;
+  $("#tree").innerHTML = h;
+  $("#tree").querySelectorAll(".fitem").forEach(b=>{
+    b.onclick = ()=>{ state.file = b.dataset.f; tree(); list(); };
+  });
+}
+
+function hi(t,q){
+  if(!q) return t;
+  try{
+    return t.replace(new RegExp("("+q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"), m=>`<mark>${m}</mark>`);
+  }catch(e){ return t; }
+}
+
+/* list */
+function list(){
+  const q = state.q.trim().toLowerCase();
+  let out = "", total = 0;
+
+  FILES.forEach(f=>{
+    if(state.file !== "all" && state.file !== f.f) return;
+    const hits = f.x.filter(p => !q || (p.t+" "+p.i+" "+p.w+" "+p.p).toLowerCase().includes(q));
+    if(!hits.length) return;
+    total += hits.length;
+
+    out += `<section class="file" id="f-${esc(f.p)}">
+      <div class="fhead">
+        <h2>${esc(f.f)}</h2>
+        <span class="path">${esc(f.p)}</span>
+        <button class="btn icon cp" data-file="${esc(f.p)}">copy file</button>
+      </div>
+      <p class="fdesc">${esc(f.d)}</p>
+      ${hits.map(p=>{
+        const open = state.open.has(p.i) || (q.length > 1);
+        const vars = [...new Set([...p.p.matchAll(/\{\{([^}]+)\}\}/g)].map(m=>m[1]))];
+        return `<article class="card ${open?'open':''}">
+          <div class="chead" data-toggle="${p.i}">
+            <div class="ctitle">
+              <h3>${hi(esc(p.t),q)}<span class="id">${esc(p.i)}</span></h3>
+              <p class="when">${hi(esc(p.w),q)}</p>
+            </div>
+            <div class="cact">
+              <button class="btn icon" data-copy="${p.i}" title="Copy prompt">copy</button>
+              <button class="btn icon" data-toggle="${p.i}" title="Toggle"><span class="chev">⌄</span></button>
+            </div>
+          </div>
+          <div class="cbody">
+            <div class="vars">${vars.length
+              ? vars.map(v=>`<span class="var">{{${esc(v)}}}</span>`).join("")
+              : `<span class="var none">no variables</span>`}</div>
+            <pre>${esc(p.p)}</pre>
+          </div>
+        </article>`;
+      }).join("")}
+    </section>`;
+  });
+
+  $("#main").innerHTML = total ? out
+    : `<div class="empty">No mode matches “${esc(state.q)}”.<br>Try: research · json · review · voice · agent</div>`;
+
+  $("#stat").textContent = `${all().length} modes · ${FILES.length} files${q ? " · "+total+" found" : ""}`;
+
+  $("#main").querySelectorAll("[data-copy]").forEach(b=>{
+    b.addEventListener("click", e=>{
+      e.stopPropagation();
+      const p = find(b.dataset.copy);
+      copy(`${p.t} [${p.i}]\nWHEN: ${p.w}\n\n${p.p}`, "prompt copied");
+    });
+  });
+  $("#main").querySelectorAll("[data-file]").forEach(b=>{
+    b.addEventListener("click", e=>{
+      e.stopPropagation();
+      const f = FILES.find(x=>x.p === b.dataset.file);
+      copy(fileMd(f), f.p + " copied");
+    });
+  });
+  $("#main").querySelectorAll("[data-toggle]").forEach(el=>{
+    el.addEventListener("click", e=>{
+      e.stopPropagation();
+      const id = el.dataset.toggle;
+      state.open.has(id) ? state.open.delete(id) : state.open.add(id);
+      list();
+    });
+  });
+}
+
+function fileMd(f){
+  let s = `# ${f.f}\n\n<!-- ${f.p} -->\n\n> ${f.d}\n\n`;
+  f.x.forEach(p=>{
+    s += `## ${p.t}\n<!-- id: ${p.i} -->\n\n**When:** ${p.w}\n\n${FENCE}text\n${p.p}\n${FENCE}\n\n`;
+  });
+  return s;
+}
+function allMd(){
+  return `# Prompt System\n\nv1.0 · ${FILES.length} files · ${all().length} modes\n\n` + FILES.map(fileMd).join("\n---\n\n");
+}
+
+/* clipboard */
+function copy(text, msg){
+  const ok = ()=>toast(msg || "copied");
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(ok).catch(()=>fb(text, ok));
+  } else fb(text, ok);
+}
+function fb(text, ok){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); ok(); } catch(e){ toast("select and copy manually"); }
+  ta.remove();
+}
+let timer;
+function toast(m){
+  const t = $("#toast");
+  t.textContent = m; t.classList.add("show");
+  clearTimeout(timer); timer = setTimeout(()=>t.classList.remove("show"), 1600);
+}
+
+/* events */
+$("#q").addEventListener("input", e=>{ state.q = e.target.value; list(); });
+$("#copyall").addEventListener("click", ()=>copy(allMd(), "library copied as markdown"));
+$("#expand").addEventListener("click", ()=>{
+  const total = all().length;
+  if(state.open.size >= total) state.open.clear();
+  else all().forEach(p=>state.open.add(p.i));
+  $("#expand").textContent = state.open.size >= total ? "Collapse all" : "Expand all";
+  list();
+});
+document.addEventListener("keydown", e=>{
+  if(e.key === "/" && document.activeElement !== $("#q")){ e.preventDefault(); $("#q").focus(); }
+  if(e.key === "Escape" && document.activeElement === $("#q")){
+    $("#q").value = ""; state.q = ""; list(); $("#q").blur();
+  }
+});
+
+tree(); list();
+</script>
+</body>
+</html>
